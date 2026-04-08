@@ -1,0 +1,6 @@
+[submodule "lib/pimoroni-pico"]
+	path = lib/pimoroni-pico
+	url = https://github.com/pimoroni/pimoroni-pico.git
+[submodule "lib/no-OS-FatFS-SD-SDIO-SPI-RPi-Pico"]
+	path = lib/no-OS-FatFS-SD-SDIO-SPI-RPi-Pico
+	url = https://github.com/carlk3/no-OS-FatFS-SD-SDIO-SPI-RPi-Pico
