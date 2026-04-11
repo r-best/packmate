@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "pico/stdlib.h"
+#include "pico/multicore.h"
 #include "hardware/spi.h"
 #include "hardware/i2c.h"
 #include "pico/cyw43_arch.h"
@@ -9,7 +10,9 @@
 
 #include "libraries/breakout_rgbmatrix5x5/breakout_rgbmatrix5x5.hpp"
 
-#include "screen.h"
+#include "src/screen.h"
+#include "src/sd.h"
+#include "src/buzzer.h"
 
 #include "tusb.h"
 
@@ -23,6 +26,23 @@ BreakoutTrackball trackball(&i2c);
 // RGB Matrix Variables
 BreakoutRGBMatrix5x5 rgbmatrix5x5(&i2c);
 
+void core1_main() {
+    printf("Second core initialized\n");
+
+    printf("Mounting SD card\n");
+    mount_sd();
+
+    printf("Initializing buzzer\n");
+    buzzer_init();
+    // play_melody("boot");
+
+    // Initialise the Wi-Fi chip
+    printf("Initializing wifi chip\n");
+    if (cyw43_arch_init()) {
+        printf("Wi-Fi init failed\n");
+    }
+}
+
 int main()
 {
     stdio_init_all();
@@ -34,14 +54,9 @@ int main()
     sleep_ms(200);
 
     printf("------------------------------------\n");
-    printf("Starting Packmate\n");
+    printf("Starting Packmate!\n");
 
-    // Initialise the Wi-Fi chip
-    printf("Initializing wifi chip\n");
-    if (cyw43_arch_init()) {
-        printf("Wi-Fi init failed\n");
-        return -1;
-    }
+    multicore_launch_core1(core1_main);
 
     printf("Initializing screen\n");
     screen_init();
@@ -70,9 +85,8 @@ int main()
         else if(state.right > SENSITIVITY)  trackball.set_rgbw(255, 0, 0, 0);
         else if(state.up > SENSITIVITY)     trackball.set_rgbw(255, 255, 0, 0);
         else if(state.down > SENSITIVITY)   trackball.set_rgbw(0, 255, 0, 0);
-        else if(state.sw_changed)           trackball.set_rgbw(0, 0, 0, 64);
+        else if(state.sw_changed)           trackball.set_rgbw(0, 0, 0, 255);
 
         sleep_ms(20);
-        // printf("hey\n");
     }
 }

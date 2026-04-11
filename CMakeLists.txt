@@ -1,6 +1,7 @@
 # Generated Cmake Pico project file
 set(OUTPUT_NAME packmate)
 
+set(PIMORONI_PICO_PATH ${CMAKE_CURRENT_LIST_DIR}/lib/pimoroni-pico)
 set(PICO_CXX_ENABLE_EXCEPTIONS 1)
 set(PICO_BOARD pico2_w CACHE STRING "Board type")
 
@@ -41,7 +42,8 @@ project(${OUTPUT_NAME} C CXX ASM)
 # Initialise the Raspberry Pi Pico SDK
 pico_sdk_init()
 
-add_executable(${OUTPUT_NAME} main.cpp hw_config.c screen.cpp sd.cpp)
+file(GLOB APP_SOURCES CONFIGURE_DEPENDS *.cpp *.c src/*.cpp)
+add_executable(${OUTPUT_NAME} ${APP_SOURCES})
 
 pico_set_program_name(${OUTPUT_NAME} ${OUTPUT_NAME})
 pico_set_program_version(${OUTPUT_NAME} "0.1")
@@ -63,10 +65,12 @@ include(libraries/breakout_trackball/breakout_trackball)
 include(libraries/breakout_rgbmatrix5x5/breakout_rgbmatrix5x5)
 
 # Add the standard library to the build
-target_link_libraries(${OUTPUT_NAME} pico_stdlib)
+target_link_libraries(${OUTPUT_NAME} pico_stdlib pico_multicore)
 
 # Add the standard include files to the build
+target_include_directories(${OUTPUT_NAME} PRIVATE ${CMAKE_CURRENT_BINARY_DIR})
 target_include_directories(${OUTPUT_NAME} PRIVATE ${CMAKE_CURRENT_LIST_DIR})
+target_include_directories(${OUTPUT_NAME} PRIVATE ${CMAKE_CURRENT_LIST_DIR}/lib/pimoroni-pico)
 
 # Add any user requested libraries
 target_link_libraries(${OUTPUT_NAME} hardware_spi hardware_i2c pico_cyw43_arch_none)
