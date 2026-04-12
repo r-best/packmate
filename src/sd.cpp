@@ -55,7 +55,7 @@ SpriteSlot* find_free_slot(int size) {
             return &slots[i];
         }
     }
-    printf("Error loading sprite - no free slot");
+    printf("Error loading sprite - no free slot\n");
     return nullptr;
 }
 

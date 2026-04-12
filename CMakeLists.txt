@@ -42,8 +42,8 @@ project(${OUTPUT_NAME} C CXX ASM)
 # Initialise the Raspberry Pi Pico SDK
 pico_sdk_init()
 
-file(GLOB APP_SOURCES CONFIGURE_DEPENDS *.cpp *.c src/*.cpp)
-add_executable(${OUTPUT_NAME} ${APP_SOURCES})
+file(GLOB_RECURSE APP_SOURCES CONFIGURE_DEPENDS src/*.cpp)
+add_executable(${OUTPUT_NAME} main.cpp hw_config.c ${APP_SOURCES})
 
 pico_set_program_name(${OUTPUT_NAME} ${OUTPUT_NAME})
 pico_set_program_version(${OUTPUT_NAME} "0.1")

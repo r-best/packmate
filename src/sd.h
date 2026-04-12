@@ -4,7 +4,7 @@
 #ifndef SD_H
 #define SD_H
 
-#define SPRITE_LIMIT_240 1
+#define SPRITE_LIMIT_240 2
 #define SPRITE_LIMIT_128 10
 #define SPRITE_LIMIT_64  10
 
