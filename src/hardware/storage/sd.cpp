@@ -5,6 +5,11 @@
 #include "ff.h"
 #include "f_util.h"
 
+// Memory backing for sprites to be loaded into dynamically
+static uint8_t sprite240_memory[SPRITE_LIMIT_240][SPRITE_SIZE_240];
+static uint8_t sprite128_memory[SPRITE_LIMIT_128][SPRITE_SIZE_128];
+static uint8_t sprite64_memory[SPRITE_LIMIT_64][SPRITE_SIZE_64];
+
 static FATFS fs;
 static SpritePool pool;
 

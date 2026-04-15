@@ -1,21 +1,17 @@
-#include <stdio.h>
-#include "pico/stdlib.h"
-
 #ifndef SD_H
 #define SD_H
 
-#define SPRITE_LIMIT_240 2
+#include <stdio.h>
+#include "pico/stdlib.h"
+
+
+#define SPRITE_LIMIT_240 1
 #define SPRITE_LIMIT_128 10
 #define SPRITE_LIMIT_64  10
 
 #define SPRITE_SIZE_240 (240 * 240)
 #define SPRITE_SIZE_128 (128 * 128)
 #define SPRITE_SIZE_64  (64 * 64)
-
-// Memory backing for sprites to be loaded into dynamically
-static uint8_t sprite240_memory[SPRITE_LIMIT_240][SPRITE_SIZE_240];
-static uint8_t sprite128_memory[SPRITE_LIMIT_128][SPRITE_SIZE_128];
-static uint8_t sprite64_memory[SPRITE_LIMIT_64][SPRITE_SIZE_64];
 
 struct SpriteSlot {
     uint8_t *data; // Points to a space in one of the spriteXXX_memory banks where the sprite is loaded
