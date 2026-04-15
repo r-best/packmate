@@ -10,7 +10,7 @@
 #include "src/hardware/rgb_matrix/rgb_matrix.h"
 #include "src/hardware/display/lcd.h"
 #include "src/hardware/storage/sd.h"
-#include "src/buzzer.h"
+#include "src/hardware/sound/buzzer.h"
 
 #define DEBUG
 
