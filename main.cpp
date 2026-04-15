@@ -8,7 +8,7 @@
 #include "src/screens/home/home.h"
 #include "src/hardware/inputs/trackball.h"
 #include "src/hardware/rgb_matrix/rgb_matrix.h"
-#include "src/screen.h"
+#include "src/hardware/display/lcd.h"
 #include "src/hardware/storage/sd.h"
 #include "src/buzzer.h"
 

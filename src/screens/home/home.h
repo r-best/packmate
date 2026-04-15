@@ -5,7 +5,7 @@
 #include "pico/stdlib.h"
 
 #include "src/screens/screen.h"
-#include "src/screen.h"
+#include "src/hardware/display/lcd.h"
 
 class HomeScreen: public Screen {
 private:

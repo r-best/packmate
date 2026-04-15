@@ -5,7 +5,7 @@
 
 #include "src/screens/screen_manager.h"
 #include "src/screens/screen.h"
-#include "src/screen.h"
+#include "src/hardware/display/lcd.h"
 
 MenuScreen menuScreen;
 

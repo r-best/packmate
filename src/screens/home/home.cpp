@@ -9,7 +9,7 @@
 #include "src/screens/screen_manager.h"
 #include "src/screens/screen.h"
 #include "src/screens/menu/menu.h"
-#include "src/screen.h"
+#include "src/hardware/display/lcd.h"
 #include "src/hardware/storage/sd.h"
 
 HomeScreen homeScreen;

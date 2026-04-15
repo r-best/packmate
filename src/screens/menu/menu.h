@@ -5,7 +5,7 @@
 #include "pico/stdlib.h"
 
 #include "src/screens/screen_manager.h"
-#include "src/screen.h"
+#include "src/hardware/display/lcd.h"
 
 class MenuScreen: public Screen {
 private:
