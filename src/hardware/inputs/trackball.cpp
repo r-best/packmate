@@ -12,11 +12,13 @@ static uint8_t SENSITIVITY = 2;
 
 BreakoutTrackball trackball(&i2c);
 
-void trackball_init() {
+int trackball_init() {
     if(!trackball.init()) {
         printf("Trackball failed to init!\n");
+        return -1;
     }
-    trackball.set_rgbw(0, 255, 0, 0);
+    trackball.set_rgbw(0, 255, 0, 255);
+    return 0;
 }
 
 void get_trackball_state(TrackballState *state) {

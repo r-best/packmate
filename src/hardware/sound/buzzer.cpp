@@ -37,11 +37,12 @@ std::map<std::string, std::vector<Note>> melodies = {
     }}},
 };
 
-void buzzer_init() {
+int buzzer_init() {
     gpio_set_function(BUZZER_PIN, GPIO_FUNC_PWM);
 
     uint slice = pwm_gpio_to_slice_num(BUZZER_PIN);
     pwm_set_enabled(slice, true);
+    return 0;
 }
 
 void play_tone(float frequency, int duration_ms) {

@@ -4,6 +4,6 @@
 #include <stdio.h>
 #include "pico/stdlib.h"
 
-void rgb_matrix_init();
+int rgb_matrix_init();
 
 #endif

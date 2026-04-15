@@ -9,7 +9,7 @@ struct TrackballState {
     uint8_t direction = -1;
 };
 
-void trackball_init();
+int trackball_init();
 void get_trackball_state(TrackballState *state);
 
 #endif
