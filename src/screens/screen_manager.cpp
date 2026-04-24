@@ -7,6 +7,7 @@ ScreenManager screenManager;
 
 void ScreenManager::push(Screen *s) {
     stack[++top] = s;
+    s->push_time_us = time_us_32();
     s->init();
 }
 
@@ -18,11 +19,11 @@ Screen* ScreenManager::active() {
     return top > 0 ? stack[top] : nullptr;
 }
 
-void ScreenManager::update(InputState *input) {
+bool ScreenManager::update(InputState *input) {
     // Update current screen
     Screen *current = active();
     if (current == nullptr) {
-        return;
+        return false;
     }
 
     bool doUpdate = false;
@@ -43,4 +44,5 @@ void ScreenManager::update(InputState *input) {
         clear_screen();
         current->render();
     }
+    return doUpdate;
 }

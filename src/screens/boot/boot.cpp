@@ -9,6 +9,15 @@
 #include "src/hardware/display/lcd.h"
 #include "src/hardware/storage/sd.h"
 
+bool BootScreen::all_successful() {
+    // Minus 1 here to not count "secrets" item
+    for (int i = 0; i < BOOT_ITEM_COUNT-1; i++) {
+        if (statuses[i] != 1) {
+            return false;
+        }
+    }
+    return true;
+}
 
 void BootScreen::update_status(int8_t idx, bool succeeded) {
     statuses[idx] = succeeded ? 1 : -1;
@@ -20,7 +29,15 @@ void BootScreen::init() {
 }
 
 void BootScreen::update(InputState *input) {
-
+    if (all_successful()) {
+        // Mark "secrets" item as successful if all other items are successful
+        // Purposefully letting this constantly mark stale so we keep updating until the time condition below
+        update_status(BOOT_ITEM_COUNT-1, true);
+    }
+    if (statuses[BOOT_ITEM_COUNT-1] == 1 && time_us_32() - push_time_us > 2000000) {
+        // Stay on boot screen for at least 2 seconds, then load HomeScreen
+        screenManager.push(&homeScreen);
+    }
 }
 
 void BootScreen::render() {

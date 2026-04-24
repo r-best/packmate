@@ -47,13 +47,13 @@ void clear_screen() {
 }
 
 void update_screen() {
+    st7789.update(&graphics);
+
     // Swap draw buffers
     uint8_t* temp = front_buffer;
     front_buffer = back_buffer;
     back_buffer = temp;
     graphics.set_framebuffer(back_buffer);
-
-    st7789.update(&graphics);
 }
 
 void draw_sprite(Sprite *sprite, uint8_t posx, uint8_t posy) {

@@ -11,6 +11,11 @@ struct InputState {
 
 class Screen {
 public:
+    // Timestamp when the screen was pushed onto the stack
+    // Note that it wraps around after ~71 minutes
+    // Currently only used by the boot screen to disappear after a couple secs so not a problem yet
+    uint32_t push_time_us;
+
     virtual UpdateMode getUpdateMode() = 0;
 
     virtual void init() = 0;

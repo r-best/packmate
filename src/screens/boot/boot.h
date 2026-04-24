@@ -11,8 +11,8 @@
 
 
 inline constexpr const char* boot_items[7] = {
-    "display", "trackball", "rgb_matrix",
-    "buzzer", "SD card", "wireless",
+    "[c0] display", "[c0] trackball", "[c0] rgb_matrix", // Core 0 items
+    "[c1] buzzer", "[c1] SD card", "[c1] wireless", // Core 1 items
     "secrets",
 };
 const size_t BOOT_ITEM_COUNT = sizeof(boot_items) / sizeof(boot_items[0]);
@@ -27,6 +27,8 @@ private:
     void init() override;
     void update(InputState *input) override;
     void render() override;
+
+    bool all_successful();
 };
 
 #endif

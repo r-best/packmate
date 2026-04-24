@@ -102,7 +102,9 @@ int main() {
         get_trackball_state(&input.trackball);
 
         // Update current screen
-        screenManager.update(&input);
-        update_screen();
+        bool updated = screenManager.update(&input);
+        if (updated) {
+            update_screen();
+        }
     }
 }

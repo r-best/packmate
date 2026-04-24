@@ -18,7 +18,7 @@ public:
     void push(Screen *s);
     void pop();
     Screen* active();
-    void update(InputState *input);
+    bool update(InputState *input);
 };
 
 extern ScreenManager screenManager;
