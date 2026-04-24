@@ -17,7 +17,7 @@ inline constexpr const char* boot_items[7] = {
 };
 const size_t BOOT_ITEM_COUNT = sizeof(boot_items) / sizeof(boot_items[0]);
 
-class BootScreen: public Screen {
+class BootScreen: public EventScreen {
 public:
     void update_status(int8_t idx, bool succeeded);
 

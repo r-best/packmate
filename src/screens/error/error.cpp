@@ -12,15 +12,13 @@
 #include "src/hardware/display/lcd.h"
 #include "src/hardware/storage/sd.h"
 
-
 void ErrorScreen::init() {
-
+    EventScreen::init();
+    printf("%s\n", error_msg.c_str());
 }
 
 void ErrorScreen::update(InputState *input) {
-    if(input->trackball.clicked) {
-        screenManager.push(&menuScreen);
-    }
+    
 }
 
 void ErrorScreen::render() {

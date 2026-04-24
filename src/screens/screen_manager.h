@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include "pico/stdlib.h"
+#include "pico/time.h"
 
 #include "src/hardware/inputs/trackball.h"
 #include "src/screens/screen.h"
@@ -12,32 +13,12 @@
 class ScreenManager {
 private:
     Screen *stack[4];
-    uint8_t top = -1;
+    uint8_t top = 0;
 public:
-    void push(Screen *s) {
-        stack[++top] = s;
-        s->init();
-    }
-
-    void pop() {
-        if (top >= 0) top--;
-    }
-
-    Screen* active() {
-        return top >= 0 ? stack[top] : nullptr;
-    }
-
-    void update(InputState *input) {
-        clear_screen();
-        sleep_ms(30);
-
-        // Update current screen
-        Screen *current = active();
-        if (current != nullptr) {
-            current->update(input);
-            current->render();
-        }
-    }
+    void push(Screen *s);
+    void pop();
+    Screen* active();
+    void update(InputState *input);
 };
 
 extern ScreenManager screenManager;

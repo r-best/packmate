@@ -8,11 +8,9 @@
 #include "src/screens/screen.h"
 #include "src/hardware/display/lcd.h"
 
-class ErrorScreen: public Screen {
+class ErrorScreen: public EventScreen {
 public:
-    ErrorScreen(std::string e): error_msg(std::move(e)) {
-        printf("%s\n", error_msg.c_str());
-    }
+    ErrorScreen(std::string e): EventScreen(), error_msg(std::move(e)) {}
 
 private:
     std::string error_msg;

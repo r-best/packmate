@@ -7,7 +7,9 @@
 #include "src/screens/screen.h"
 #include "src/hardware/display/lcd.h"
 
-class HomeScreen: public Screen {
+class HomeScreen: public FPSScreen {
+public:
+    HomeScreen(): FPSScreen(20) {}
 private:
     Sprite *ui_sprite;
 

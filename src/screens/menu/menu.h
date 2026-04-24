@@ -7,7 +7,7 @@
 #include "src/screens/screen_manager.h"
 #include "src/hardware/display/lcd.h"
 
-class MenuScreen: public Screen {
+class MenuScreen: public EventScreen {
 private:
     Sprite *ui_sprite;
 

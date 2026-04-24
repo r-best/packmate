@@ -12,10 +12,11 @@
 
 void BootScreen::update_status(int8_t idx, bool succeeded) {
     statuses[idx] = succeeded ? 1 : -1;
+    markStale();
 }
 
 void BootScreen::init() {
-
+    EventScreen::init();
 }
 
 void BootScreen::update(InputState *input) {
