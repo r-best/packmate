@@ -37,11 +37,6 @@ int init_debug_connections() {
 int init_secondary_hardware() {
     int status;
 
-    // Initialize RGB matrix
-    printf("Initializing RGB matrix\n");
-    status = rgb_matrix_init();
-    bootScreen->update_status(2, status==0);
-
     printf("Initializing buzzer\n");
     status = buzzer_init();
     bootScreen->update_status(3, status==0);
@@ -89,6 +84,11 @@ int main() {
     bootScreen->update_status(1, status==0);
 
     multicore_launch_core1(core1_main);
+
+    // Initialize RGB matrix
+    printf("Initializing RGB matrix\n");
+    status = rgb_matrix_init();
+    bootScreen->update_status(2, status==0);
 
     InputState input;
 
