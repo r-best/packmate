@@ -38,8 +38,8 @@ int rgb_matrix_init() {
         printf("RGB matrix failed to init\n");
         return -1;
     }
-    rgb_matrix_set_color(255, 255, 255);
     rgb_matrix_set_brightness(30);
+    rgb_matrix_set_color(255, 255, 255);
     return 0;
 }
 
