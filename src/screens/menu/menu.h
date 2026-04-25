@@ -1,6 +1,8 @@
 #ifndef MENU_H
 #define MENU_H
 
+#include "widgets/button.h"
+
 #include <stdio.h>
 #include "pico/stdlib.h"
 
@@ -10,12 +12,26 @@
 class MenuScreen: public EventScreen {
 public:
     const char* name() const override { return "MenuScreen"; }
-private:
 
+    static const uint8_t rows = 3;
+    static const uint8_t cols = 3;
+
+private:
+    Button* buttons[rows*cols] = {nullptr};
+    uint8_t selected = 0;
+
+public:
     void init() override;
     bool shouldTriggerUpdate(InputState *input) override;
     void update(InputState *input) override;
     void render() override;
+
+    ~MenuScreen() {
+        for (int i = 0; i < 9; i++) {
+            if (buttons[i]) delete buttons[i];
+        }
+    }
+
 };
 
 extern MenuScreen menuScreen;

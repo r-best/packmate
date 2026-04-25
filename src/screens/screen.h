@@ -1,7 +1,10 @@
 #ifndef SCREEN_H
 #define SCREEN_H
 
+#include <functional>
+
 #include "src/hardware/inputs/trackball.h"
+#include "src/hardware/storage/sd.h"
 
 enum UpdateMode { FPS, EVENT };
 
@@ -54,6 +57,27 @@ public:
         pendingUpdate = false;
         return doUpdate;
     }
+};
+
+class Widget {
+public:
+    int16_t x, y, w, h;
+    Sprite *sprite;
+
+    virtual void update(InputState *input) = 0;
+    virtual void render() = 0;
+
+    virtual ~Widget() = default;
+};
+
+class ClickableWidget: public Widget {
+public:
+    bool focused = false;
+
+    std::function<void()> onClick;
+
+    virtual void on_focus() { focused = true; }
+    virtual void on_blur() { focused = false; }
 };
 
 #endif
