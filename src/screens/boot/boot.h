@@ -19,6 +19,7 @@ const size_t BOOT_ITEM_COUNT = sizeof(boot_items) / sizeof(boot_items[0]);
 
 class BootScreen: public EventScreen {
 public:
+    const char* name() const override { return "BootScreen"; }
     void update_status(int8_t idx, bool succeeded);
 
 private:

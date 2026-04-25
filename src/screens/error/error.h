@@ -11,6 +11,7 @@
 class ErrorScreen: public EventScreen {
 public:
     ErrorScreen(std::string e): EventScreen(), error_msg(std::move(e)) {}
+    const char* name() const override { return "ErrorScreen"; }
 
 private:
     std::string error_msg;

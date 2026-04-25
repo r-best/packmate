@@ -9,7 +9,7 @@
 
 class HomeScreen: public FPSScreen {
 public:
-    HomeScreen(): FPSScreen(20) {}
+    const char* name() const override { return "HomeScreen"; }
 private:
     Sprite *ui_sprite;
 

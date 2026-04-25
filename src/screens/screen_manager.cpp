@@ -6,12 +6,15 @@
 ScreenManager screenManager;
 
 void ScreenManager::push(Screen *s) {
+    printf("Pushing screen %s\n", s->name());
     stack[++top] = s;
     s->push_time_us = time_us_32();
     s->init();
 }
 
 void ScreenManager::pop() {
+    Screen *current = active();
+    printf("Popping screen %s\n", current ? current->name() : "null");
     if (top > 0) top--;
 }
 
@@ -30,10 +33,7 @@ bool ScreenManager::update(InputState *input) {
     uint32_t now = time_us_32();
     switch (current->getUpdateMode()) {
         case FPS:
-            if (now - ((FPSScreen*)current)->lastUpdateTime >= ((FPSScreen*)current)->updateInterval_us) {
-                doUpdate = true;
-                ((FPSScreen*)current)->lastUpdateTime = now;
-            }
+            doUpdate = true;
             break;
         case EVENT:
             doUpdate = ((EventScreen*)current)->shouldTriggerUpdate(input);

@@ -24,7 +24,7 @@ int trackball_init() {
 void get_trackball_state(TrackballState *state) {
     Trackball::State newState = trackball.read();
 
-    state->clicked = newState.sw_pressed;
+    state->clicked = newState.sw_changed && newState.sw_pressed;
 
     if(newState.up > SENSITIVITY)           state->direction = 0;
     else if(newState.right > SENSITIVITY)   state->direction = 1;

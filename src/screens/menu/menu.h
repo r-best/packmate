@@ -8,10 +8,12 @@
 #include "src/hardware/display/lcd.h"
 
 class MenuScreen: public EventScreen {
+public:
+    const char* name() const override { return "MenuScreen"; }
 private:
-    Sprite *ui_sprite;
 
     void init() override;
+    bool shouldTriggerUpdate(InputState *input) override;
     void update(InputState *input) override;
     void render() override;
 };

@@ -10,7 +10,13 @@
 MenuScreen menuScreen;
 
 void MenuScreen::init() {
-    ui_sprite = load_sprite("sprites/ui_base.rgb332");
+    EventScreen::init();
+}
+
+bool MenuScreen::shouldTriggerUpdate(InputState *input) {
+    bool doUpdate = pendingUpdate;
+    pendingUpdate = false;
+    return doUpdate || input->trackball.clicked;
 }
 
 void MenuScreen::update(InputState *input) {
@@ -20,6 +26,6 @@ void MenuScreen::update(InputState *input) {
 }
 
 void MenuScreen::render() {
-    draw_sprite(ui_sprite, 0, 0);
+    set_pen_color(255, 255, 255);
     draw_text("this is the main menu", 50, 50, 60);
 }

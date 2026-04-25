@@ -17,7 +17,8 @@ public:
     uint32_t push_time_us;
 
     virtual UpdateMode getUpdateMode() = 0;
-
+    virtual const char* name() const = 0;
+    
     virtual void init() = 0;
     virtual void update(InputState *input) = 0;
     virtual void render() = 0;
@@ -27,17 +28,7 @@ public:
 class FPSScreen: public Screen {
 public:
     UpdateMode getUpdateMode() { return FPS; }
-
-    uint32_t lastUpdateTime = 0;
-    uint32_t updateInterval_us = 50000; // Storing this as microseconds because the timer function returns microseconds
-
-    FPSScreen(uint8_t fps = 20) {
-        updateInterval_us = 1000000 / fps;
-    }
-
-    void init() {
-        lastUpdateTime = time_us_32();
-    }
+    const char* name() const override { return "FPSScreen"; }
 };
 
 class EventScreen: public Screen {
@@ -45,6 +36,7 @@ protected:
     bool pendingUpdate = false;
 public:
     UpdateMode getUpdateMode() { return EVENT; }
+    const char* name() const override { return "EventScreen"; }
 
     void init() {
         markStale();

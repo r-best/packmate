@@ -20,6 +20,15 @@
 #include "tusb.h"
 #endif
 
+uint8_t MAIN_FPS = 20;
+uint32_t FRAME_INTERVAL_US = 1000000 / MAIN_FPS; // Storing this as microseconds because the timer function returns microseconds
+uint32_t WAIT_INTERVAL_MS = FRAME_INTERVAL_US / 4 / 1000; // Wait 1/4 of frame interval between loops to save CPU, no need to check constantly. Could probably even drop to 1/2
+
+void set_fps(uint8_t fps) {
+    MAIN_FPS = fps;
+    FRAME_INTERVAL_US = 1000000 / MAIN_FPS;
+}
+
 BootScreen *bootScreen;
 
 int init_debug_connections() {
@@ -92,19 +101,25 @@ int main() {
 
     InputState input;
 
-    // screenManager.push(&homeScreen);
     screenManager.push(bootScreen);
     screenManager.update(&input); // Not sure why this extra update needs to be here or it all breaks
 
     // Main loop
+    uint32_t lastUpdateTime = time_us_32();
     while(true){
-        // Update inputs
-        get_trackball_state(&input.trackball);
+        uint32_t now = time_us_32();
+        if (now - lastUpdateTime >= FRAME_INTERVAL_US) {
+            lastUpdateTime = now;
 
-        // Update current screen
-        bool updated = screenManager.update(&input);
-        if (updated) {
-            update_screen();
+            // Update inputs
+            get_trackball_state(&input.trackball);
+
+            // Update current screen
+            bool updated = screenManager.update(&input);
+            if (updated) {
+                update_screen();
+            }
         }
+        sleep_ms(WAIT_INTERVAL_MS);
     }
 }
