@@ -15,6 +15,9 @@ void ScreenManager::push(Screen *s) {
 void ScreenManager::pop() {
     Screen *current = active();
     printf("Popping screen %s\n", current ? current->name() : "null");
+    if (current != nullptr) {
+        current->unload();
+    }
     if (top > 0) top--;
 }
 

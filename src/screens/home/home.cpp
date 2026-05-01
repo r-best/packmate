@@ -15,7 +15,7 @@
 HomeScreen homeScreen;
 
 void HomeScreen::init() {
-    ui_sprite = load_sprite("sprites/ui_base.rgb332");
+    ui_sprite = loadSprite("sprites/ui_base.rgb332");
 }
 
 void HomeScreen::update(InputState *input) {

@@ -24,15 +24,15 @@ void MenuScreen::init() {
     EventScreen::init();
 
     buttonDef MENU_ITEMS[NUM_MENU_ITEMS] = {
-        {"Feed",        load_sprite("sprites/menu/food.rgb332"),        [this](){ printf("Feed button clicked\n"); } },
-        {"Play",        load_sprite("sprites/menu/play.rgb332"),        [this](){ printf("Play button clicked\n"); } },
-        {"Mail",        load_sprite("sprites/home/mail.rgb332"),        [this](){ printf("Mail button clicked\n"); } },
+        {"Feed",        loadSprite("sprites/menu/food.rgb332"),        [this](){ printf("Feed button clicked\n"); } },
+        {"Play",        loadSprite("sprites/menu/play.rgb332"),        [this](){ printf("Play button clicked\n"); } },
+        {"Mail",        loadSprite("sprites/home/mail.rgb332"),        [this](){ printf("Mail button clicked\n"); } },
         {"Care",        nullptr,                                        [this](){ printf("Care button clicked\n"); } },
-        {"Back",        load_sprite("sprites/menu/back.rgb332"),        [this](){ screenManager.pop(); }},
-        {"Visitors",    load_sprite("sprites/menu/social.rgb332"),      [this](){ printf("Visitors button clicked\n"); } },
+        {"Back",        loadSprite("sprites/menu/back.rgb332"),        [this](){ screenManager.pop(); }},
+        {"Visitors",    loadSprite("sprites/menu/social.rgb332"),      [this](){ printf("Visitors button clicked\n"); } },
         {"",            nullptr,                                        [this](){ printf("Empty button clicked\n"); } },
-        {"Shop",        load_sprite("sprites/menu/shop.rgb332"),        [this](){ printf("Shop button clicked\n"); } },
-        {"Settings",    load_sprite("sprites/menu/settings.rgb332"),    [this](){ printf("Settings button clicked\n"); } }
+        {"Shop",        loadSprite("sprites/menu/shop.rgb332"),        [this](){ printf("Shop button clicked\n"); } },
+        {"Settings",    loadSprite("sprites/menu/settings.rgb332"),    [this](){ printf("Settings button clicked\n"); } }
     };
 
     int cols = 3;

@@ -2,6 +2,7 @@
 #define SCREEN_H
 
 #include <functional>
+#include <vector>
 
 #include "src/hardware/inputs/trackball.h"
 #include "src/hardware/storage/sd.h"
@@ -25,7 +26,25 @@ public:
     virtual void init() = 0;
     virtual void update(InputState *input) = 0;
     virtual void render() = 0;
+    virtual void unload() {
+        for (Sprite* sprite : ownedSprites) {
+            release_sprite(sprite);
+        }
+        ownedSprites.clear();
+    }
     virtual ~Screen() {}
+
+protected:
+    Sprite* loadSprite(const char *filename) {
+        Sprite* sprite = load_sprite(filename);
+        if (sprite) {
+            ownedSprites.push_back(sprite);
+        }
+        return sprite;
+    }
+
+private:
+    std::vector<Sprite*> ownedSprites;
 };
 
 class FPSScreen: public Screen {
