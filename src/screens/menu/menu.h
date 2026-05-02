@@ -2,6 +2,7 @@
 #define MENU_H
 
 #include "widgets/button.h"
+#include "widgets/memoryusage.h"
 
 #include <stdio.h>
 #include "pico/stdlib.h"
@@ -17,6 +18,7 @@ public:
     static const uint8_t cols = 3;
 
 private:
+    MemoryUsageBar *memoryUsageWidget;
     Button* buttons[rows*cols] = {nullptr};
     uint8_t selected = 0;
 

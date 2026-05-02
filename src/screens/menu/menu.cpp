@@ -1,5 +1,6 @@
 #include "menu.h"
 #include "widgets/button.h"
+#include "widgets/memoryusage.h"
 
 #include <functional>
 #include <stdio.h>
@@ -22,6 +23,12 @@ const uint8_t NUM_MENU_ITEMS = MenuScreen::rows * MenuScreen::cols;
 
 void MenuScreen::init() {
     EventScreen::init();
+
+    memoryUsageWidget = new MemoryUsageBar();
+    memoryUsageWidget->x = 10;
+    memoryUsageWidget->y = SCREEN_HEIGHT - 20;
+    memoryUsageWidget->w = SCREEN_WIDTH - 20;
+    memoryUsageWidget->h = 10;
 
     buttonDef MENU_ITEMS[NUM_MENU_ITEMS] = {
         {"Feed",        loadSprite("sprites/menu/food.rgb332"),        [this](){ printf("Feed button clicked\n"); } },
@@ -91,10 +98,13 @@ void MenuScreen::update(InputState *input) {
     if (input->trackball.clicked) {
         buttons[selected]->onClick();
     }
+
+    memoryUsageWidget->update(input);
 }
 
 void MenuScreen::render() {
     for (int i = 0; i < NUM_MENU_ITEMS; i++) {
         buttons[i]->render();
     }
+    memoryUsageWidget->render();
 }

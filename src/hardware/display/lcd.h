@@ -7,6 +7,9 @@
 
 #include "src/hardware/storage/sd.h"
 
+extern const int SCREEN_WIDTH;
+extern const int SCREEN_HEIGHT;
+
 int screen_init();
 void set_backlight(int brightness);
 void set_pen_color(uint8_t r, uint8_t g, uint8_t b);
