@@ -3,8 +3,8 @@
 #include "pico/multicore.h"
 #include "hardware/spi.h"
 #include "pico/cyw43_arch.h"
-#include "hardware/watchdog.h"
 
+#include "src/hardware/watchdog/watchdog.h"
 #include "src/screens/screen_manager.h"
 #include "src/screens/home/home.h"
 #include "src/screens/error/error.h"
@@ -31,11 +31,6 @@ void set_fps(uint8_t fps) {
 }
 
 BootScreen *bootScreen;
-
-void init_watchdog() {
-    // Set up the watchdog to reset after 5 seconds to catch any errors
-    watchdog_enable(5000, 1);
-}
 
 int init_debug_connections() {
     stdio_init_all();
@@ -117,19 +112,19 @@ int main() {
 
     screenManager.push(new HomeScreen());
 
-    if (watchdog_caused_reboot()) {
+    if (watchdog::is_watchdog_reboot()) {
         printf("Rebooted by watchdog - there was some kind of error\n");
         screenManager.push(new ErrorScreen("Watchdog reboot - Press any button to continue"));
     }
 
     screenManager.push(bootScreen);
 
-    init_watchdog();
+    watchdog::start();
 
     // Main loop
     uint32_t lastUpdateTime = time_us_32();
     while(true){
-        watchdog_update();
+        watchdog::feed();
 
         uint32_t now = time_us_32();
         if (now - lastUpdateTime >= FRAME_INTERVAL_US) {
