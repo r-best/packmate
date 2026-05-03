@@ -3,10 +3,11 @@
 #include <stdio.h>
 #include "pico/stdlib.h"
 
-void Button::update(InputState *input) {
+bool Button::update(InputState *input) {
     if (focused && input->trackball.clicked) {
         if (onClick) onClick();
     }
+    return Widget::update(input);
 }
 
 void Button::render() {
@@ -32,4 +33,6 @@ void Button::render() {
 
     // Horizontal centering handled by width parameter
     draw_text(label, x, text_y, w);
+
+    stale = false;
 }

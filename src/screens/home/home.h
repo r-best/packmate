@@ -7,17 +7,15 @@
 #include "src/screens/screen.h"
 #include "src/hardware/display/lcd.h"
 
-class HomeScreen: public FPSScreen {
+class HomeScreen: public Screen {
 public:
     const char* name() const override { return "HomeScreen"; }
 private:
     Sprite *ui_sprite;
 
     void init() override;
-    void update(InputState *input) override;
-    void render() override;
+    bool update(InputState *input) override;
+    void custom_render() override;
 };
-
-extern HomeScreen homeScreen;
 
 #endif

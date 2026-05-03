@@ -12,19 +12,18 @@
 #include "src/hardware/display/lcd.h"
 #include "src/hardware/storage/sd.h"
 
-HomeScreen homeScreen;
-
 void HomeScreen::init() {
     ui_sprite = loadSprite("sprites/ui_base.rgb332");
 }
 
-void HomeScreen::update(InputState *input) {
+bool HomeScreen::update(InputState *input) {
     if(input->trackball.clicked) {
-        screenManager.push(&menuScreen);
+        screenManager.push(new MenuScreen());
     }
+    return Screen::update(input);
 }
 
-void HomeScreen::render() {
+void HomeScreen::custom_render() {
     draw_sprite(ui_sprite, 0, 0);
     draw_text("character sprite goes here", 20, 160, 60);
 }

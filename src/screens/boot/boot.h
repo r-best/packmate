@@ -17,7 +17,7 @@ inline constexpr const char* boot_items[7] = {
 };
 const size_t BOOT_ITEM_COUNT = sizeof(boot_items) / sizeof(boot_items[0]);
 
-class BootScreen: public EventScreen {
+class BootScreen: public Screen {
 public:
     const char* name() const override { return "BootScreen"; }
     void update_status(int8_t idx, bool succeeded);
@@ -26,8 +26,8 @@ private:
     int8_t statuses[BOOT_ITEM_COUNT];
 
     void init() override;
-    void update(InputState *input) override;
-    void render() override;
+    bool update(InputState *input) override;
+    void custom_render() override;
 
     bool all_successful();
 };

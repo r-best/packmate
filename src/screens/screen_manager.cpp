@@ -8,6 +8,7 @@ ScreenManager screenManager;
 void ScreenManager::push(Screen *s) {
     printf("Pushing screen %s\n", s->name());
     stack[++top] = s;
+    clear_screen();
     s->push_time_us = time_us_32();
     s->init();
 }
@@ -19,6 +20,8 @@ void ScreenManager::pop() {
         current->unload();
     }
     if (top > 0) top--;
+    delete current;
+    active()->markStale();
 }
 
 Screen* ScreenManager::active() {
@@ -32,20 +35,10 @@ bool ScreenManager::update(InputState *input) {
         return false;
     }
 
-    bool doUpdate = false;
-    uint32_t now = time_us_32();
-    switch (current->getUpdateMode()) {
-        case FPS:
-            doUpdate = true;
-            break;
-        case EVENT:
-            doUpdate = ((EventScreen*)current)->shouldTriggerUpdate(input);
-            break;
+    bool doRender = current->update(input);
+    if (doRender) {
+        // Need to fetch active screen again in case the update caused a screen change
+        active()->render();
     }
-    if (doUpdate) {
-        current->update(input);
-        clear_screen();
-        current->render();
-    }
-    return doUpdate;
+    return doRender;
 }

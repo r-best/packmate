@@ -11,8 +11,6 @@
 #include "src/screens/screen.h"
 #include "src/hardware/display/lcd.h"
 
-MenuScreen menuScreen;
-
 struct buttonDef {
     const char* label;
     Sprite* sprite;
@@ -22,13 +20,14 @@ struct buttonDef {
 const uint8_t NUM_MENU_ITEMS = MenuScreen::rows * MenuScreen::cols;
 
 void MenuScreen::init() {
-    EventScreen::init();
+    Screen::init();
 
     memoryUsageWidget = new MemoryUsageBar();
     memoryUsageWidget->x = 10;
     memoryUsageWidget->y = SCREEN_HEIGHT - 20;
     memoryUsageWidget->w = SCREEN_WIDTH - 20;
     memoryUsageWidget->h = 10;
+    widgets.push_back(memoryUsageWidget);
 
     buttonDef MENU_ITEMS[NUM_MENU_ITEMS] = {
         {"Feed",        loadSprite("sprites/menu/food.rgb332"),        [this](){ printf("Feed button clicked\n"); } },
@@ -46,10 +45,10 @@ void MenuScreen::init() {
     int rows = 3;
 
     int spacing = 10;
-    int btn_w = 70;
+    int btn_w = 50;
 
-    int start_x = 10;
-    int start_y = 10;
+    int start_x = 20;
+    int start_y = 20;
 
     for (int i = 0; i < NUM_MENU_ITEMS; i++) {
         buttons[i] = new Button(MENU_ITEMS[i].label);
@@ -61,50 +60,40 @@ void MenuScreen::init() {
         buttons[i]->y = start_y + (i/3) * (btn_w + spacing);
         buttons[i]->w = btn_w;
         buttons[i]->h = btn_w;
+
+        widgets.push_back(buttons[i]);
     }
+    buttons[selected]->set_focused(true);
 }
 
-bool MenuScreen::shouldTriggerUpdate(InputState *input) {
-    bool doUpdate = pendingUpdate;
-    pendingUpdate = false;
-    return doUpdate || input->trackball.clicked || input->trackball.direction != -1;
-}
-
-void MenuScreen::update(InputState *input) {
+bool MenuScreen::update(InputState *input) {
     int row = selected / cols;
     int col = selected % cols;
+
+    bool updated = true;
     switch (input->trackball.direction) {
     case 0: // UP
         if (row > 0) row--;
         break;
     case 1: // RIGHT
-        if (col < cols - 1) col++;
+        if (col < cols-1) col++;
         break;
     case 2: // DOWN
-        if (row < rows - 1) row++;
+        if (row < rows-1) row++;
         break;
     case 3: // LEFT
         if (col > 0) col--;
         break;
     default:
+        updated = false;
         break;
     }
-    selected = row * cols + col;
 
-    for (int i = 0; i < NUM_MENU_ITEMS; i++) {
-        buttons[i]->focused = (i == selected);
+    if (updated) {
+        buttons[selected]->set_focused(false);
+        selected = row * cols + col;
+        buttons[selected]->set_focused(true);
     }
 
-    if (input->trackball.clicked) {
-        buttons[selected]->onClick();
-    }
-
-    memoryUsageWidget->update(input);
-}
-
-void MenuScreen::render() {
-    for (int i = 0; i < NUM_MENU_ITEMS; i++) {
-        buttons[i]->render();
-    }
-    memoryUsageWidget->render();
+    return Screen::update(input);
 }

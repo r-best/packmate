@@ -13,7 +13,7 @@ public:
 
     Button(const char* label) : label(label) {}
 
-    void update(InputState *input) override;
+    bool update(InputState *input) override;
     void render() override;
 };
 

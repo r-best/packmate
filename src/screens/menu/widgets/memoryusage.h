@@ -13,7 +13,7 @@ public:
         h = 10;
     }
 
-    void update(InputState *input) override;
+    bool update(InputState *input) override;
     void render() override;
 };
 

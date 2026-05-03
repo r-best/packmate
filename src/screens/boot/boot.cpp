@@ -16,7 +16,7 @@ bool BootScreen::all_successful() {
             return false;
         }
     }
-    return true;
+    return !statuses[BOOT_ITEM_COUNT-1]; // Should return true if all items EXCEPT "secrets" are successful
 }
 
 void BootScreen::update_status(int8_t idx, bool succeeded) {
@@ -25,22 +25,22 @@ void BootScreen::update_status(int8_t idx, bool succeeded) {
 }
 
 void BootScreen::init() {
-    EventScreen::init();
+    
 }
 
-void BootScreen::update(InputState *input) {
+bool BootScreen::update(InputState *input) {
     if (all_successful()) {
-        // Mark "secrets" item as successful if all other items are successful
-        // Purposefully letting this constantly mark stale so we keep updating until the time condition below
+        // Once all hardware is successful, mark the "secrets" item successful too to show we're done
         update_status(BOOT_ITEM_COUNT-1, true);
     }
     if (statuses[BOOT_ITEM_COUNT-1] == 1 && time_us_32() - push_time_us > 2000000) {
         // Stay on boot screen for at least 2 seconds, then load HomeScreen
-        screenManager.push(&homeScreen);
+        screenManager.push(new HomeScreen());
     }
+    return Screen::update(input);
 }
 
-void BootScreen::render() {
+void BootScreen::custom_render() {
     set_pen_color(255, 255, 255);
     draw_text("Booting Packmate.....", 20, 20, 240);
     draw_text("--------------------------", 20, 30, 220);

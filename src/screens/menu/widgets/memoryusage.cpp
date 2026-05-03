@@ -13,8 +13,8 @@ extern char __end__;
 extern char __StackTop;
 extern char __StackBottom;
 
-void MemoryUsageBar::update(InputState *input) {
-    
+bool MemoryUsageBar::update(InputState *input) {
+    return true;
 }
 
 void MemoryUsageBar::render() {

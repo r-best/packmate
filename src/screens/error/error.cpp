@@ -13,15 +13,14 @@
 #include "src/hardware/storage/sd.h"
 
 void ErrorScreen::init() {
-    EventScreen::init();
     printf("%s\n", error_msg.c_str());
 }
 
-void ErrorScreen::update(InputState *input) {
-    
+bool ErrorScreen::update(InputState *input) {
+    return stale;
 }
 
-void ErrorScreen::render() {
+void ErrorScreen::custom_render() {
     set_pen_color(255, 0, 0);
     draw_text(error_msg, 20, 20, 200);
 }

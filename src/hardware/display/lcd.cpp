@@ -12,13 +12,10 @@ using namespace pimoroni;
 
 const int SCREEN_WIDTH = 240;
 const int SCREEN_HEIGHT = 240;
-static uint8_t buffer1[SCREEN_WIDTH * SCREEN_HEIGHT];
-static uint8_t buffer2[SCREEN_WIDTH * SCREEN_HEIGHT];
-static uint8_t *front_buffer = buffer1;
-static uint8_t *back_buffer = buffer2;
+static uint8_t buffer[SCREEN_WIDTH * SCREEN_HEIGHT];
 
 ST7789 st7789(SCREEN_WIDTH, SCREEN_HEIGHT, ROTATE_0, false, {spi1, 9U, 10U, 11U, PIN_UNUSED, 8U, 13U});
-PicoGraphics_PenRGB332 graphics(st7789.width, st7789.height, back_buffer);
+PicoGraphics_PenRGB332 graphics(st7789.width, st7789.height, buffer);
 
 int screen_init() {
     uint actual = spi_set_baudrate(spi1, 75000000);
@@ -48,22 +45,16 @@ void clear_screen() {
 
 void update_screen() {
     st7789.update(&graphics);
-
-    // Swap draw buffers
-    uint8_t* temp = front_buffer;
-    front_buffer = back_buffer;
-    back_buffer = temp;
-    graphics.set_framebuffer(back_buffer);
 }
 
 void draw_sprite(Sprite *sprite, uint8_t posx, uint8_t posy) {
     if(sprite->width == SCREEN_WIDTH) {
-        memcpy(back_buffer, sprite->data, sprite->size);
+        memcpy(buffer, sprite->data, sprite->size);
         return;
     }
 
     for(int i = 0; i < sprite->width; i++){
-        memcpy(&back_buffer[(posx+i)*SCREEN_WIDTH+posy], &sprite->data[i*sprite->width], sprite->width);
+        memcpy(&buffer[(posx+i)*SCREEN_WIDTH+posy], &sprite->data[i*sprite->width], sprite->width);
     }
 }
 
