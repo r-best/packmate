@@ -9,7 +9,8 @@
 
 class HomeScreen: public Screen {
 public:
-    const char* name() const override { return "HomeScreen"; }
+    SCREEN_ID(SCREEN_HOME);
+    SCREEN_NAME(SCREEN_HOME);
 private:
     Sprite *ui_sprite;
 

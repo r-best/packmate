@@ -12,7 +12,8 @@
 
 class MenuScreen: public Screen {
 public:
-    const char* name() const override { return "MenuScreen"; }
+    SCREEN_ID(SCREEN_MENU);
+    SCREEN_NAME(SCREEN_MENU);
 
     static const uint8_t rows = 3;
     static const uint8_t cols = 3;

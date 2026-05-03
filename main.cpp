@@ -112,9 +112,10 @@ int main() {
 
     screenManager.push(new HomeScreen());
 
+    // if (true) {
     if (watchdog::is_watchdog_reboot()) {
         printf("Rebooted by watchdog - there was some kind of error\n");
-        screenManager.push(new ErrorScreen("Watchdog reboot - Press any button to continue"));
+        screenManager.push(new ErrorScreen("Watchdog reboot"));
     }
 
     screenManager.push(bootScreen);
@@ -125,6 +126,8 @@ int main() {
     uint32_t lastUpdateTime = time_us_32();
     while(true){
         watchdog::feed();
+        if (screenManager.active()->id() != ScreenID::SCREEN_ERROR && screenManager.active()->id() != ScreenID::SCREEN_BOOT)
+            watchdog::set_active_screen(screenManager.active());
 
         uint32_t now = time_us_32();
         if (now - lastUpdateTime >= FRAME_INTERVAL_US) {

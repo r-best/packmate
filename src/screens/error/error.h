@@ -10,11 +10,13 @@
 
 class ErrorScreen: public Screen {
 public:
-    ErrorScreen(std::string e): Screen(), error_msg(std::move(e)) {}
-    const char* name() const override { return "ErrorScreen"; }
+    SCREEN_ID(SCREEN_ERROR);
+    SCREEN_NAME(SCREEN_ERROR);
+    ErrorScreen(std::string e);
 
 private:
     std::string error_msg;
+    std::string crash_screen_name;
 
     void init() override;
     bool update(InputState *input) override;

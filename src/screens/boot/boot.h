@@ -19,7 +19,8 @@ const size_t BOOT_ITEM_COUNT = sizeof(boot_items) / sizeof(boot_items[0]);
 
 class BootScreen: public Screen {
 public:
-    const char* name() const override { return "BootScreen"; }
+    SCREEN_ID(SCREEN_BOOT);
+    SCREEN_NAME(SCREEN_BOOT);
     void update_status(int8_t idx, bool succeeded);
 
 private:

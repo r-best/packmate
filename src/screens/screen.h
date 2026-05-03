@@ -7,6 +7,17 @@
 #include "src/hardware/inputs/trackball.h"
 #include "src/hardware/storage/sd.h"
 
+enum ScreenID {
+    SCREEN_NULL,
+    SCREEN_BOOT,
+    SCREEN_ERROR,
+    SCREEN_HOME,
+    SCREEN_MENU,
+};
+const char* screen_name(ScreenID id);
+#define SCREEN_ID(x) const uint8_t id() const override { return x; }
+#define SCREEN_NAME(x) const char* name() const override { return screen_name(x); }
+
 struct InputState {
     TrackballState trackball;
 };
@@ -68,6 +79,7 @@ public:
     // Currently only used by the boot screen to disappear after a couple secs so not a problem yet
     uint32_t active_time_us;
 
+    virtual const uint8_t id() const = 0;
     virtual const char* name() const = 0;
 
     void markStale() {
