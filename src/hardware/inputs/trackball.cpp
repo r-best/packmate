@@ -32,3 +32,7 @@ void get_trackball_state(TrackballState *state) {
     else if(newState.left > SENSITIVITY)    state->direction = 3;
     else                                    state->direction = -1;
 }
+
+void set_trackball_led(uint8_t r, uint8_t g, uint8_t b) {
+    trackball.set_rgbw(r, g, b, 255);
+}

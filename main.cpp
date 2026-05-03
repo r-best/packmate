@@ -3,6 +3,7 @@
 #include "pico/multicore.h"
 #include "hardware/spi.h"
 #include "pico/cyw43_arch.h"
+#include "hardware/watchdog.h"
 
 #include "src/screens/screen_manager.h"
 #include "src/screens/home/home.h"
@@ -31,6 +32,11 @@ void set_fps(uint8_t fps) {
 
 BootScreen *bootScreen;
 
+void init_watchdog() {
+    // Set up the watchdog to reset after 5 seconds to catch any errors
+    watchdog_enable(5000, 1);
+}
+
 int init_debug_connections() {
     stdio_init_all();
 
@@ -46,13 +52,19 @@ int init_debug_connections() {
 int init_secondary_hardware() {
     int status;
 
+    sleep_ms(500);
+
     printf("Initializing buzzer\n");
     status = buzzer_init();
     bootScreen->update_status(3, status==0);
 
+    sleep_ms(500);
+
     printf("Mounting SD card\n");
     status = mount_sd();
     bootScreen->update_status(4, status==0);
+
+    sleep_ms(500);
 
     // Initialise the Wi-Fi chip
     printf("Initializing wifi chip\n");
@@ -62,6 +74,8 @@ int init_secondary_hardware() {
         return -1;
     }
     bootScreen->update_status(5, true);
+
+    sleep_ms(500);
 
     play_melody("boot");
     return 0;
@@ -101,12 +115,22 @@ int main() {
 
     InputState input;
 
+    screenManager.push(new HomeScreen());
+
+    if (watchdog_caused_reboot()) {
+        printf("Rebooted by watchdog - there was some kind of error\n");
+        screenManager.push(new ErrorScreen("Watchdog reboot - Press any button to continue"));
+    }
+
     screenManager.push(bootScreen);
-    screenManager.update(&input); // Not sure why this extra update needs to be here or it all breaks
+
+    init_watchdog();
 
     // Main loop
     uint32_t lastUpdateTime = time_us_32();
     while(true){
+        watchdog_update();
+
         uint32_t now = time_us_32();
         if (now - lastUpdateTime >= FRAME_INTERVAL_US) {
             lastUpdateTime = now;

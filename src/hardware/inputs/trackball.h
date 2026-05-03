@@ -11,5 +11,6 @@ struct TrackballState {
 
 int trackball_init();
 void get_trackball_state(TrackballState *state);
+void set_trackball_led(uint8_t r, uint8_t g, uint8_t b);
 
 #endif

@@ -46,6 +46,8 @@ public:
 
 class Screen {
 protected:
+    bool initialized = false;
+
     // A screen should mark itself stale only when something it renders *itself* has changed
     // Things rendered by widgets on the screen don't count, the widgets manage that on their own
     bool stale = true;
@@ -64,16 +66,22 @@ public:
     // Timestamp when the screen was pushed onto the stack
     // Note that it wraps around after ~71 minutes
     // Currently only used by the boot screen to disappear after a couple secs so not a problem yet
-    uint32_t push_time_us;
+    uint32_t active_time_us;
 
     virtual const char* name() const = 0;
 
     void markStale() {
         stale = true;
     }
+
+    bool is_initialized() {
+        return initialized;
+    }
     
     virtual void init() {
         stale = true;
+        active_time_us = time_us_32();
+        initialized = true;
     };
     virtual bool update(InputState *input){
         // By default, Screen::update will update all widgets and return true if any widget reports an update

@@ -7,21 +7,23 @@ ScreenManager screenManager;
 
 void ScreenManager::push(Screen *s) {
     printf("Pushing screen %s\n", s->name());
+    if (top == SCREEN_STACK_SIZE-1) {
+        printf("ERROR: screen stack full, cannot push");
+    }
     stack[++top] = s;
     clear_screen();
-    s->push_time_us = time_us_32();
-    s->init();
 }
 
 void ScreenManager::pop() {
     Screen *current = active();
-    printf("Popping screen %s\n", current ? current->name() : "null");
     if (current != nullptr) {
-        current->unload();
+        to_delete.push_back(current);
     }
     if (top > 0) top--;
-    delete current;
-    active()->markStale();
+    clear_screen();
+    if (active() != nullptr) {
+        active()->markStale();
+    }
 }
 
 Screen* ScreenManager::active() {
@@ -35,10 +37,19 @@ bool ScreenManager::update(InputState *input) {
         return false;
     }
 
+    if (!current->is_initialized()) current->init();
+
     bool doRender = current->update(input);
     if (doRender) {
         // Need to fetch active screen again in case the update caused a screen change
         active()->render();
     }
+
+    // Delete any screens marked for deletion
+    for (auto s : to_delete) {
+        delete s;
+    }
+    to_delete.clear();
+
     return doRender;
 }

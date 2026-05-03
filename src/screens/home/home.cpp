@@ -13,6 +13,8 @@
 #include "src/hardware/storage/sd.h"
 
 void HomeScreen::init() {
+    Screen::init();
+    set_trackball_led(0, 255, 0);
     ui_sprite = loadSprite("sprites/ui_base.rgb332");
 }
 

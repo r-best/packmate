@@ -13,14 +13,20 @@
 #include "src/hardware/storage/sd.h"
 
 void ErrorScreen::init() {
+    Screen::init();
     printf("%s\n", error_msg.c_str());
+    set_trackball_led(255, 255, 0);
 }
 
 bool ErrorScreen::update(InputState *input) {
-    return stale;
+    if (input->trackball.clicked) {
+        printf("Error screen clicked, closing, screenmanager: %p\n", &screenManager);
+        screenManager.pop();
+    }
+    return Screen::update(input);
 }
 
 void ErrorScreen::custom_render() {
-    set_pen_color(255, 0, 0);
+    set_pen_color(255, 255, 0);
     draw_text(error_msg, 20, 20, 200);
 }

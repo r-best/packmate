@@ -25,7 +25,7 @@ void BootScreen::update_status(int8_t idx, bool succeeded) {
 }
 
 void BootScreen::init() {
-    
+    Screen::init();
 }
 
 bool BootScreen::update(InputState *input) {
@@ -33,9 +33,9 @@ bool BootScreen::update(InputState *input) {
         // Once all hardware is successful, mark the "secrets" item successful too to show we're done
         update_status(BOOT_ITEM_COUNT-1, true);
     }
-    if (statuses[BOOT_ITEM_COUNT-1] == 1 && time_us_32() - push_time_us > 2000000) {
+    if (statuses[BOOT_ITEM_COUNT-1] == 1 && time_us_32() - active_time_us > 2000000) {
         // Stay on boot screen for at least 2 seconds, then load HomeScreen
-        screenManager.push(new HomeScreen());
+        screenManager.pop();
     }
     return Screen::update(input);
 }
