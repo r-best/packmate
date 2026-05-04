@@ -41,37 +41,37 @@ bool BootScreen::update(InputState *input) {
 }
 
 void BootScreen::custom_render() {
-    set_pen_color(255, 255, 255);
-    draw_text("Booting Packmate.....", 20, 20, 240);
-    draw_text("--------------------------", 20, 30, 220);
+    LCD::set_pen_color(255, 255, 255);
+    LCD::draw_text("Booting Packmate.....", 20, 20, 240);
+    LCD::draw_text("--------------------------", 20, 30, 220);
     for (int i = 0; i < BOOT_ITEM_COUNT; i++) {
         uint8_t row_pos = 30+25*(i+1);
 
         switch (statuses[i]) {
             case -1:
-                set_pen_color(255, 0, 0);
-                draw_rect(25, row_pos, 15, 15); // Outer box edge
-                set_pen_color(0, 0, 0);
-                draw_rect(27, row_pos+2, 11, 11); // Hollow out box
-                set_pen_color(255, 0, 0);
+                LCD::set_pen_color(255, 0, 0);
+                LCD::draw_rect(25, row_pos, 15, 15); // Outer box edge
+                LCD::set_pen_color(0, 0, 0);
+                LCD::draw_rect(27, row_pos+2, 11, 11); // Hollow out box
+                LCD::set_pen_color(255, 0, 0);
                 // Draw red X in box
-                draw_line(25, row_pos, 40, row_pos+15);
-                draw_line(25, row_pos+14, 40, row_pos);
+                LCD::draw_line(25, row_pos, 40, row_pos+15);
+                LCD::draw_line(25, row_pos+14, 40, row_pos);
                 break;
             case  0:
-                set_pen_color(255, 255, 255);
-                draw_rect(25, row_pos, 15, 15);
-                set_pen_color(0, 0, 0);
-                draw_rect(27, row_pos+2, 11, 11);
-                set_pen_color(255, 255, 255);
+                LCD::set_pen_color(255, 255, 255);
+                LCD::draw_rect(25, row_pos, 15, 15);
+                LCD::set_pen_color(0, 0, 0);
+                LCD::draw_rect(27, row_pos+2, 11, 11);
+                LCD::set_pen_color(255, 255, 255);
                 break;
             case  1:
-                set_pen_color(0, 255, 0);
-                draw_rect(25, row_pos, 15, 15);
+                LCD::set_pen_color(0, 255, 0);
+                LCD::draw_rect(25, row_pos, 15, 15);
                 break;
             default: break;
         }
 
-        draw_text(boot_items[i], 50, row_pos, 190);
+        LCD::draw_text(boot_items[i], 50, row_pos, 190);
     }
 }

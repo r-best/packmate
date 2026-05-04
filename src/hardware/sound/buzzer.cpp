@@ -22,53 +22,55 @@
 #define NOTE_G5 783.99
 #define NOTE_C6 1046.50
 
-struct Note {
-    float freq;
-    int duration;
-};
+namespace Buzzer {
+    struct Note {
+        float freq;
+        int duration;
+    };
 
-std::map<std::string, std::vector<Note>> melodies = {
-    {"boot", {{
-        {NOTE_C5, 100}, {0, 35},
-        {NOTE_E5, 100}, {0, 35},
-        {NOTE_G5, 120}, {0, 40},
-        {NOTE_C6, 300},
-        {NOTE_G5, 80},  {NOTE_C6, 400},
-    }}},
-};
+    std::map<std::string, std::vector<Note>> melodies = {
+        {"boot", {{
+            {NOTE_C5, 100}, {0, 35},
+            {NOTE_E5, 100}, {0, 35},
+            {NOTE_G5, 120}, {0, 40},
+            {NOTE_C6, 300},
+            {NOTE_G5, 80},  {NOTE_C6, 400},
+        }}},
+    };
 
-int buzzer_init() {
-    gpio_set_function(BUZZER_PIN, GPIO_FUNC_PWM);
+    int init() {
+        gpio_set_function(BUZZER_PIN, GPIO_FUNC_PWM);
 
-    uint slice = pwm_gpio_to_slice_num(BUZZER_PIN);
-    pwm_set_enabled(slice, true);
-    return 0;
-}
+        uint slice = pwm_gpio_to_slice_num(BUZZER_PIN);
+        pwm_set_enabled(slice, true);
+        return 0;
+    }
 
-void play_tone(float frequency, int duration_ms) {
-    uint slice = pwm_gpio_to_slice_num(BUZZER_PIN);
-    uint channel = pwm_gpio_to_channel(BUZZER_PIN);
+    void play_tone(float frequency, int duration_ms) {
+        uint slice = pwm_gpio_to_slice_num(BUZZER_PIN);
+        uint channel = pwm_gpio_to_channel(BUZZER_PIN);
 
-    // Pico PWM runs off system clock (usually 125 MHz)
-    float clock = 125000000.0f;
+        // Pico PWM runs off system clock (usually 125 MHz)
+        float clock = 125000000.0f;
 
-    // Choose a divider (keeps wrap in reasonable range)
-    float divider = 100.0f;
-    pwm_set_clkdiv(slice, divider);
+        // Choose a divider (keeps wrap in reasonable range)
+        float divider = 100.0f;
+        pwm_set_clkdiv(slice, divider);
 
-    float wrap = clock / (divider * frequency) - 1;
-    pwm_set_wrap(slice, (uint16_t)wrap);
+        float wrap = clock / (divider * frequency) - 1;
+        pwm_set_wrap(slice, (uint16_t)wrap);
 
-    // 50% duty cycle (square wave)
-    pwm_set_chan_level(slice, channel, wrap / 2);
-    sleep_ms(duration_ms);
+        // 50% duty cycle (square wave)
+        pwm_set_chan_level(slice, channel, wrap / 2);
+        sleep_ms(duration_ms);
 
-    pwm_set_chan_level(slice, channel, 0);
-}
+        pwm_set_chan_level(slice, channel, 0);
+    }
 
-void play_melody(std::string name) {
-    std::vector melody = melodies[name];
-    for (int i = 0; i < melody.size(); i++) {
-        play_tone(melody[i].freq, melody[i].duration);
+    void play_melody(std::string name) {
+        std::vector melody = melodies[name];
+        for (int i = 0; i < melody.size(); i++) {
+            play_tone(melody[i].freq, melody[i].duration);
+        }
     }
 }

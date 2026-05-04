@@ -11,7 +11,7 @@ void ScreenManager::push(Screen *s) {
         printf("ERROR: screen stack full, cannot push");
     }
     stack[++top] = s;
-    clear_screen();
+    LCD::clear_screen();
 }
 
 void ScreenManager::pop() {
@@ -20,7 +20,7 @@ void ScreenManager::pop() {
         to_delete.push_back(current);
     }
     if (top > 0) top--;
-    clear_screen();
+    LCD::clear_screen();
     if (active() != nullptr) {
         active()->markStale();
     }

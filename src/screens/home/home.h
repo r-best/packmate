@@ -12,7 +12,7 @@ public:
     SCREEN_ID(SCREEN_HOME);
     SCREEN_NAME(SCREEN_HOME);
 private:
-    Sprite *ui_sprite;
+    SD::Sprite *ui_sprite;
 
     void init() override;
     bool update(InputState *input) override;

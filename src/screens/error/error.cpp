@@ -22,7 +22,7 @@ ErrorScreen::ErrorScreen(std::string e): Screen() {
 void ErrorScreen::init() {
     Screen::init();
     printf("%s\n", error_msg.c_str());
-    set_trackball_led(255, 255, 0);
+    Trackball::set_led(255, 255, 0);
 }
 
 bool ErrorScreen::update(InputState *input) {
@@ -37,23 +37,23 @@ void ErrorScreen::custom_render() {
     // Draw red screen border
     const uint8_t BORDER_WIDTH = 5;
     const uint8_t TEXT_WRAP_WIDTH = 240;
-    set_pen_color(255, 0, 0);
-    draw_rect(0, 0, BORDER_WIDTH, SCREEN_HEIGHT);
-    draw_rect(0, 0, SCREEN_WIDTH, BORDER_WIDTH);
-    draw_rect(0, SCREEN_HEIGHT-BORDER_WIDTH, SCREEN_WIDTH, SCREEN_HEIGHT);
-    draw_rect(SCREEN_WIDTH-BORDER_WIDTH, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+    LCD::set_pen_color(255, 0, 0);
+    LCD::draw_rect(0, 0, BORDER_WIDTH, LCD::SCREEN_HEIGHT);
+    LCD::draw_rect(0, 0, LCD::SCREEN_WIDTH, BORDER_WIDTH);
+    LCD::draw_rect(0, LCD::SCREEN_HEIGHT-BORDER_WIDTH, LCD::SCREEN_WIDTH, LCD::SCREEN_HEIGHT);
+    LCD::draw_rect(LCD::SCREEN_WIDTH-BORDER_WIDTH, 0, LCD::SCREEN_WIDTH, LCD::SCREEN_HEIGHT);
 
-    set_pen_color(255, 255, 255);
-    draw_text("AN ERROR OCCURRED", 10, 10, TEXT_WRAP_WIDTH);
+    LCD::set_pen_color(255, 255, 255);
+    LCD::draw_text("AN ERROR OCCURRED", 10, 10, TEXT_WRAP_WIDTH);
 
-    set_pen_color(255, 255, 0);
-    draw_text(crash_screen_name, 10, 30, TEXT_WRAP_WIDTH);
+    LCD::set_pen_color(255, 255, 0);
+    LCD::draw_text(crash_screen_name, 10, 30, TEXT_WRAP_WIDTH);
 
-    set_pen_color(255, 255, 255);
-    draw_text("Error source:", 10, 70, TEXT_WRAP_WIDTH);
-    set_pen_color(255, 0, 0);
-    draw_text(error_msg, 10, 90, TEXT_WRAP_WIDTH);
+    LCD::set_pen_color(255, 255, 255);
+    LCD::draw_text("Error source:", 10, 70, TEXT_WRAP_WIDTH);
+    LCD::set_pen_color(255, 0, 0);
+    LCD::draw_text(error_msg, 10, 90, TEXT_WRAP_WIDTH);
 
-    set_pen_color(0, 255, 0);
-    draw_text("-- CLICK TO CONTINUE --", 10, 210, TEXT_WRAP_WIDTH);
+    LCD::set_pen_color(0, 255, 0);
+    LCD::draw_text("-- CLICK TO CONTINUE --", 10, 210, TEXT_WRAP_WIDTH);
 }

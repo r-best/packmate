@@ -13,18 +13,18 @@ bool Button::update(InputState *input) {
 void Button::render() {
     // Background
     if (focused) {
-        set_pen_color(255, 255, 255);   // white background when focused
+        LCD::set_pen_color(255, 255, 255);   // white background when focused
     } else {
-        set_pen_color(100, 100, 100);   // gray background otherwise
+        LCD::set_pen_color(100, 100, 100);   // gray background otherwise
     }
 
-    draw_rect(x, y, w, h);
+    LCD::draw_rect(x, y, w, h);
 
     // Text color (invert for contrast)
     if (focused) {
-        set_pen_color(0, 0, 0);         // black text on white
+        LCD::set_pen_color(0, 0, 0);         // black text on white
     } else {
-        set_pen_color(255, 255, 255);   // white text on gray
+        LCD::set_pen_color(255, 255, 255);   // white text on gray
     }
 
     // Approximate vertical centering
@@ -32,7 +32,7 @@ void Button::render() {
     int text_y = y + (h - text_height) / 2;
 
     // Horizontal centering handled by width parameter
-    draw_text(label, x, text_y, w);
+    LCD::draw_text(label, x, text_y, w);
 
     stale = false;
 }

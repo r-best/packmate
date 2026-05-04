@@ -13,7 +13,7 @@
 
 struct buttonDef {
     const char* label;
-    Sprite* sprite;
+    SD::Sprite* sprite;
     std::function<void()> onClick;
 };
 
@@ -24,8 +24,8 @@ void MenuScreen::init() {
 
     memoryUsageWidget = new MemoryUsageBar();
     memoryUsageWidget->x = 10;
-    memoryUsageWidget->y = SCREEN_HEIGHT - 20;
-    memoryUsageWidget->w = SCREEN_WIDTH - 20;
+    memoryUsageWidget->y = LCD::SCREEN_HEIGHT - 20;
+    memoryUsageWidget->w = LCD::SCREEN_WIDTH - 20;
     memoryUsageWidget->h = 10;
     widgets.push_back(memoryUsageWidget);
 

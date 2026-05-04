@@ -50,13 +50,13 @@ int init_secondary_hardware() {
     sleep_ms(500);
 
     printf("Initializing buzzer\n");
-    status = buzzer_init();
+    status = Buzzer::init();
     bootScreen->update_status(3, status==0);
 
     sleep_ms(500);
 
     printf("Mounting SD card\n");
-    status = mount_sd();
+    status = SD::init();
     bootScreen->update_status(4, status==0);
 
     sleep_ms(500);
@@ -72,7 +72,7 @@ int init_secondary_hardware() {
 
     sleep_ms(500);
 
-    play_melody("boot");
+    Buzzer::play_melody("boot");
     return 0;
 }
 
@@ -93,19 +93,19 @@ int main() {
     bootScreen = new BootScreen();
 
     printf("Initializing screen\n");
-    int status = screen_init();
+    int status = LCD::init();
     bootScreen->update_status(0, status==0);
     
     // Try to initialize trackball first so we have the LED to light red on error
     printf("Initializing trackball\n");
-    status = trackball_init();
+    status = Trackball::init();
     bootScreen->update_status(1, status==0);
 
     multicore_launch_core1(core1_main);
 
     // Initialize RGB matrix
     printf("Initializing RGB matrix\n");
-    status = rgb_matrix_init();
+    status = RGBMatrix::init();
     bootScreen->update_status(2, status==0);
 
     InputState input;
@@ -134,12 +134,12 @@ int main() {
             lastUpdateTime = now;
 
             // Update inputs
-            get_trackball_state(&input.trackball);
+            Trackball::get_state(&input.trackball);
 
             // Update current screen
             bool updated = screenManager.update(&input);
             if (updated) {
-                update_screen();
+                LCD::update_screen();
             }
         }
         sleep_ms(WAIT_INTERVAL_MS);

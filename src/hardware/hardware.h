@@ -6,8 +6,6 @@
 
 #include "libraries/breakout_trackball/breakout_trackball.hpp"
 
-using namespace pimoroni;
-
-static I2C i2c(BOARD::BREAKOUT_GARDEN, 100000); // Trackball requires I2C at 100kHz or less.
+static pimoroni::I2C i2c(pimoroni::BOARD::BREAKOUT_GARDEN, 100000); // Trackball requires I2C at 100kHz or less.
 
 #endif

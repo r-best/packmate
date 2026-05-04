@@ -46,28 +46,28 @@ void MemoryUsageBar::render() {
     // --- Draw segments ---
 
     // Static (blue)
-    set_pen_color(0, 0, 255);
-    draw_rect(cursor, y, static_w, h);
+    LCD::set_pen_color(0, 0, 255);
+    LCD::draw_rect(cursor, y, static_w, h);
     cursor += static_w;
 
     // Heap (green)
-    set_pen_color(0, 255, 0);
-    draw_rect(cursor, y, heap_w, h);
+    LCD::set_pen_color(0, 255, 0);
+    LCD::draw_rect(cursor, y, heap_w, h);
     cursor += heap_w;
 
     // Stack (yellow)
-    set_pen_color(255, 255, 0);
-    draw_rect(cursor, y, stack_w, h);
+    LCD::set_pen_color(255, 255, 0);
+    LCD::draw_rect(cursor, y, stack_w, h);
     cursor += stack_w;
 
     // Free (dark gray)
-    set_pen_color(50, 50, 50);
-    draw_rect(cursor, y, free_w, h);
+    LCD::set_pen_color(50, 50, 50);
+    LCD::draw_rect(cursor, y, free_w, h);
 
     // Optional: border
-    set_pen_color(255, 255, 255);
-    draw_rect(x, y, w, 1);               // top
-    draw_rect(x, y + h - 1, w, 1);   // bottom
-    draw_rect(x, y, 1, h);               // left
-    draw_rect(x + w - 1, y, 1, h);   // right
+    LCD::set_pen_color(255, 255, 255);
+    LCD::draw_rect(x, y, w, 1);               // top
+    LCD::draw_rect(x, y + h - 1, w, 1);   // bottom
+    LCD::draw_rect(x, y, 1, h);               // left
+    LCD::draw_rect(x + w - 1, y, 1, h);   // right
 }

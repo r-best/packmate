@@ -19,7 +19,7 @@ const char* screen_name(ScreenID id);
 #define SCREEN_NAME(x) const char* name() const override { return screen_name(x); }
 
 struct InputState {
-    TrackballState trackball;
+    Trackball::TrackballState trackball;
 };
 
 class Widget {
@@ -27,7 +27,7 @@ protected:
     bool stale = true;
 public:
     int16_t x, y, w, h;
-    Sprite *sprite;
+    SD::Sprite *sprite;
 
     bool is_stale() {
         return stale;
@@ -63,11 +63,11 @@ protected:
     // Things rendered by widgets on the screen don't count, the widgets manage that on their own
     bool stale = true;
 
-    std::vector<Sprite*> ownedSprites;
+    std::vector<SD::Sprite*> ownedSprites;
     std::vector<Widget*> widgets;
 
-    Sprite* loadSprite(const char *filename) {
-        Sprite* sprite = load_sprite(filename);
+    SD::Sprite* loadSprite(const char *filename) {
+        SD::Sprite* sprite = SD::load_sprite(filename);
         if (sprite) {
             ownedSprites.push_back(sprite);
         }
@@ -120,8 +120,8 @@ public:
         stale = false;
     };
     virtual void unload() {
-        for (Sprite* sprite : ownedSprites) {
-            release_sprite(sprite);
+        for (SD::Sprite* sprite : ownedSprites) {
+            SD::release_sprite(sprite);
         }
         ownedSprites.clear();
         for (Widget* widget : widgets) {

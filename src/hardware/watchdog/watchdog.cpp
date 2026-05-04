@@ -28,9 +28,10 @@ namespace watchdog {
     }
 
     bool is_watchdog_reboot(){
-        bool ret = watchdog_caused_reboot() && watchdog_hw->scratch[0] == MAGIC;
+        bool valid = watchdog_hw->scratch[0] == MAGIC;
         watchdog_hw->scratch[0] = MAGIC;
-        return ret;
+        if (!valid) return false;
+        return watchdog_caused_reboot();
     }
 
     void feed() {

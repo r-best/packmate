@@ -14,7 +14,7 @@
 
 void HomeScreen::init() {
     Screen::init();
-    set_trackball_led(0, 255, 0);
+    Trackball::set_led(0, 255, 0);
     ui_sprite = loadSprite("sprites/ui_base.rgb332");
 }
 
@@ -26,6 +26,6 @@ bool HomeScreen::update(InputState *input) {
 }
 
 void HomeScreen::custom_render() {
-    draw_sprite(ui_sprite, 0, 0);
-    draw_text("character sprite goes here", 20, 160, 60);
+    LCD::draw_sprite(ui_sprite, 0, 0);
+    LCD::draw_text("character sprite goes here", 20, 160, 60);
 }
