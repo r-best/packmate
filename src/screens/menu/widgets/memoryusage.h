@@ -8,9 +8,11 @@
 #include "src/hardware/display/lcd.h"
 
 class MemoryUsageBar: public Widget {
+private:
+    uint8_t bar_w;
 public:
     MemoryUsageBar() {
-        h = 10;
+        bar_w = w;
     }
 
     bool update(InputState *input) override;

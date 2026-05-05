@@ -2,6 +2,7 @@
 
 #include <stdio.h>
 #include <malloc.h>
+#include <format>
 #include "pico/stdlib.h"
 
 // Linker symbols exposed by Pico SDK, used to calculate memory usage
@@ -36,10 +37,10 @@ void MemoryUsageBar::render() {
     size_t free_ram = (used_total < total_ram) ? (total_ram - used_total) : 0;
 
     // --- Convert to pixel widths ---
-    int static_w = (static_used * w) / total_ram;
-    int heap_w   = (heap_used   * w) / total_ram;
-    int stack_w  = (stack_used  * w) / total_ram;
-    int free_w   = w - (static_w + heap_w + stack_w);
+    int static_w = (static_used * bar_w) / total_ram;
+    int heap_w   = (heap_used   * bar_w) / total_ram;
+    int stack_w  = (stack_used  * bar_w) / total_ram;
+    int free_w   = bar_w - (static_w + heap_w + stack_w);
 
     int cursor = x;
 
@@ -63,11 +64,18 @@ void MemoryUsageBar::render() {
     // Free (dark gray)
     LCD::set_pen_color(50, 50, 50);
     LCD::draw_rect(cursor, y, free_w, h);
+    cursor += free_w;
 
     // Optional: border
     LCD::set_pen_color(255, 255, 255);
-    LCD::draw_rect(x, y, w, 1);               // top
-    LCD::draw_rect(x, y + h - 1, w, 1);   // bottom
+    LCD::draw_rect(x, y, bar_w, 1);               // top
+    LCD::draw_rect(x, y + h - 1, bar_w, 1);   // bottom
     LCD::draw_rect(x, y, 1, h);               // left
-    LCD::draw_rect(x + w - 1, y, 1, h);   // right
+    LCD::draw_rect(x + bar_w - 1, y, 1, h);   // right
+
+    float perc = used_total/total_ram;
+    if      (perc > .90)    LCD::set_pen_color(255, 0, 0);
+    else if (perc > .80)    LCD::set_pen_color(255, 255, 0);
+    else                    LCD::set_pen_color(255, 255, 255);
+    LCD::draw_text(std::to_string(used_total/1000)+"/"+std::to_string(total_ram/1000)+"KB", cursor+10, y-3, 240);
 }
