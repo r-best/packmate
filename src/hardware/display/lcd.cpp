@@ -46,6 +46,11 @@ namespace LCD {
         st7789.update(&graphics);
     }
 
+    void update_screen(uint16_t x, uint16_t y, uint8_t w, uint8_t h) {
+        // For some reason this method is unimplemented, need to create it based off of st7789.update()
+        st7789.partial_update(&graphics, pimoroni::Rect(x, y, w, h));
+    }
+
     void draw_sprite(SD::Sprite *sprite, uint8_t posx, uint8_t posy) {
         if(sprite->width == SCREEN_WIDTH) {
             memcpy(buffer, sprite->data, sprite->size);

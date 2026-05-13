@@ -20,6 +20,7 @@ namespace LCD {
     void draw_line(int32_t x1, int32_t y1, int32_t x2, int32_t y2);
     void clear_screen();
     void update_screen();
+    void update_screen(uint16_t x, uint16_t y, uint8_t w, uint8_t h);
 };
 
 #endif
