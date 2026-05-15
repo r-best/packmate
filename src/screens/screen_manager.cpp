@@ -16,13 +16,14 @@ void ScreenManager::push(Screen *s) {
 
 void ScreenManager::pop() {
     Screen *current = active();
+    printf("Popping screen %s\n", current->name());
     if (current != nullptr) {
         to_delete.push_back(current);
     }
     if (top > 0) top--;
     LCD::clear_screen();
     if (active() != nullptr) {
-        active()->markStale();
+        active()->markDeepStale();
     }
 }
 

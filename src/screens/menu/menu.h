@@ -2,7 +2,6 @@
 #define MENU_H
 
 #include "widgets/button.h"
-#include "widgets/memoryusage.h"
 
 #include <stdio.h>
 #include "pico/stdlib.h"
@@ -22,7 +21,6 @@ public:
     bool update(InputState *input) override;
 
 private:
-    MemoryUsageBar *memoryUsageWidget;
     Button* buttons[rows*cols] = {nullptr};
     uint8_t selected = 4;
 };

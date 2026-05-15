@@ -14,6 +14,7 @@ enum ScreenID {
     SCREEN_ERROR,
     SCREEN_HOME,
     SCREEN_MENU,
+    SCREEN_DEBUG,
 };
 const char* screen_name(ScreenID id);
 #define SCREEN_ID(x) const uint8_t id() const override { return x; }
@@ -32,6 +33,9 @@ public:
 
     bool is_stale() {
         return stale;
+    }
+    void mark_stale() {
+        stale = true;
     }
 
     virtual bool update(InputState *input) {
@@ -85,6 +89,14 @@ public:
 
     void markStale() {
         stale = true;
+    }
+    // Extended stale marker that marks the screen itself AND all widgets
+    // Basically only used on screenmanager.pop() to ensure full screen redraw at start
+    void markDeepStale() {
+        stale = true;
+        for (Widget *w: widgets) {
+            w->mark_stale();
+        }
     }
 
     bool is_initialized() {

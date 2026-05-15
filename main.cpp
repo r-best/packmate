@@ -11,6 +11,7 @@
 #include "src/screens/home/home.h"
 #include "src/screens/error/error.h"
 #include "src/screens/boot/boot.h"
+#include "src/screens/debug/debug.h"
 #include "src/hardware/inputs/trackball.h"
 #include "src/hardware/rgb_matrix/rgb_matrix.h"
 #include "src/hardware/display/lcd.h"
@@ -153,6 +154,13 @@ int main() {
 
             // Update inputs
             Trackball::get_state(&input.trackball);
+
+            // Long-press trackball opens debug screen from anywhere
+            if (input.trackball.long_pressed) {
+                if (screenManager.active()->id() != ScreenID::SCREEN_DEBUG) {
+                    screenManager.push(new DebugScreen());
+                }
+            }
 
             // Update current screen
             bool updated = screenManager.update(&input);

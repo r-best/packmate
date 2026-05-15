@@ -12,7 +12,12 @@ private:
     uint8_t bar_w;
 public:
     MemoryUsageBar() {
-        bar_w = w;
+        
+    }
+
+    void set_w(uint8_t width) {
+        w = width;
+        bar_w = w*.6;
     }
 
     bool update(InputState *input) override;

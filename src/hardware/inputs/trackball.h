@@ -7,6 +7,7 @@
 namespace Trackball {
     struct TrackballState {
         bool clicked = false;
+        bool long_pressed = false;
         uint8_t direction = -1;
     };
 

@@ -19,7 +19,7 @@ bool MemoryUsageBar::update(InputState *input) {
 }
 
 void MemoryUsageBar::render() {
-    // --- Memory calculations ---
+    // Memory calculations
     size_t bss_size  = &__bss_end__  - &__bss_start__;
     size_t data_size = &__data_end__ - &__data_start__;
     size_t static_used = bss_size + data_size;
@@ -36,15 +36,13 @@ void MemoryUsageBar::render() {
     size_t used_total = static_used + heap_used + stack_used;
     size_t free_ram = (used_total < total_ram) ? (total_ram - used_total) : 0;
 
-    // --- Convert to pixel widths ---
+    // Convert to pixel widths
     int static_w = (static_used * bar_w) / total_ram;
     int heap_w   = (heap_used   * bar_w) / total_ram;
     int stack_w  = (stack_used  * bar_w) / total_ram;
     int free_w   = bar_w - (static_w + heap_w + stack_w);
 
     int cursor = x;
-
-    // --- Draw segments ---
 
     // Static (blue)
     LCD::set_pen_color(0, 0, 255);
@@ -66,9 +64,9 @@ void MemoryUsageBar::render() {
     LCD::draw_rect(cursor, y, free_w, h);
     cursor += free_w;
 
-    // Optional: border
+    // Border
     LCD::set_pen_color(255, 255, 255);
-    LCD::draw_rect(x, y, bar_w, 1);               // top
+    LCD::draw_rect(x, y, bar_w, 1);           // top
     LCD::draw_rect(x, y + h - 1, bar_w, 1);   // bottom
     LCD::draw_rect(x, y, 1, h);               // left
     LCD::draw_rect(x + bar_w - 1, y, 1, h);   // right
