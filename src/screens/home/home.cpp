@@ -15,7 +15,7 @@
 void HomeScreen::init() {
     Screen::init();
     Trackball::set_led(0, 255, 0);
-    ui_sprite = loadSprite("sprites/ui_base.rgb332");
+    ui_sprite = loadSprite(SpriteID::UI_BASE);
 }
 
 bool HomeScreen::update(InputState *input) {

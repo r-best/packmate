@@ -7,6 +7,7 @@
 
 #include "src/hardware/inputs/trackball.h"
 #include "src/hardware/storage/sd.h"
+#include "src/sprites.h"
 
 enum ScreenID {
     SCREEN_NULL,
@@ -77,6 +78,9 @@ protected:
             ownedSprites.push_back(sprite);
         }
         return sprite;
+    }
+    SD::Sprite* loadSprite(SpriteID id) {
+        return loadSprite(SPRITE_PATHS[static_cast<int>(id)]);
     }
 public:
     // Timestamp when the screen was pushed onto the stack

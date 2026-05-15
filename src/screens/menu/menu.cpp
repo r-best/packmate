@@ -22,15 +22,15 @@ void MenuScreen::init() {
     Screen::init();
 
     buttonDef MENU_ITEMS[NUM_MENU_ITEMS] = {
-        {"Feed",        loadSprite("sprites/menu/food.rgb332"),        [this](){ printf("Feed button clicked\n"); } },
-        {"Play",        loadSprite("sprites/menu/play.rgb332"),        [this](){ printf("Play button clicked\n"); } },
-        {"Mail",        loadSprite("sprites/home/mail.rgb332"),        [this](){ printf("Mail button clicked\n"); } },
-        {"Care",        nullptr,                                        [this](){ printf("Care button clicked\n"); } },
-        {"Back",        loadSprite("sprites/menu/back.rgb332"),        [this](){ screenManager.pop(); }},
-        {"Visitors",    loadSprite("sprites/menu/social.rgb332"),      [this](){ printf("Visitors button clicked\n"); } },
-        {"",            nullptr,                                        [this](){ printf("Empty button clicked\n"); } },
-        {"Shop",        loadSprite("sprites/menu/shop.rgb332"),        [this](){ printf("Shop button clicked\n"); } },
-        {"Settings",    loadSprite("sprites/menu/settings.rgb332"),    [this](){ printf("Settings button clicked\n"); } }
+        {"Feed",        loadSprite(SpriteID::MENU_FOOD),     [this](){ printf("Feed button clicked\n"); } },
+        {"Play",        loadSprite(SpriteID::MENU_PLAY),     [this](){ printf("Play button clicked\n"); } },
+        {"Mail",        loadSprite(SpriteID::HOME_MAIL),     [this](){ printf("Mail button clicked\n"); } },
+        {"Care",        nullptr,                              [this](){ printf("Care button clicked\n"); } },
+        {"Back",        loadSprite(SpriteID::MENU_BACK),     [this](){ screenManager.pop(); }},
+        {"Visitors",    loadSprite(SpriteID::MENU_SOCIAL),   [this](){ printf("Visitors button clicked\n"); } },
+        {"",            nullptr,                              [this](){ printf("Empty button clicked\n"); } },
+        {"Shop",        loadSprite(SpriteID::MENU_SHOP),     [this](){ printf("Shop button clicked\n"); } },
+        {"Settings",    loadSprite(SpriteID::MENU_SETTINGS), [this](){ printf("Settings button clicked\n"); } }
     };
 
     int cols = 3;
