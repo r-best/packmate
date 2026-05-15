@@ -1,6 +1,8 @@
 #ifndef SPRITES_H
 #define SPRITES_H
 
+constexpr uint8_t CHROMA_KEY = 0xE3; // RGB332 magenta — treated as transparent
+
 #define SPRITE_LIST \
     X(UI_BASE,       "sprites/ui_base.rgb332")       \
     X(HOME_MAIL,     "sprites/home/mail.rgb332")     \

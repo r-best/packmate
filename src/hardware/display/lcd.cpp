@@ -4,6 +4,7 @@
 #include <string.h>
 #include "pico/stdlib.h"
 #include "src/hardware/storage/sd.h"
+#include "src/sprites.h"
 
 #include "drivers/st7789/st7789.hpp"
 #include "libraries/pico_graphics/pico_graphics.hpp"
@@ -51,14 +52,24 @@ namespace LCD {
         st7789.partial_update(&graphics, pimoroni::Rect(x, y, w, h));
     }
 
-    void draw_sprite(SD::Sprite *sprite, uint8_t posx, uint8_t posy) {
-        if(sprite->width == SCREEN_WIDTH) {
-            memcpy(buffer, sprite->data, sprite->size);
+    void draw_sprite(SD::Sprite *sprite, uint8_t posx, uint8_t posy, bool transparent) {
+        if(!transparent) {
+            if(sprite->width == SCREEN_WIDTH) {
+                memcpy(buffer, sprite->data, sprite->size);
+                return;
+            }
+            for(int i = 0; i < sprite->width; i++){
+                memcpy(&buffer[(posx+i)*SCREEN_WIDTH+posy], &sprite->data[i*sprite->width], sprite->width);
+            }
             return;
         }
 
         for(int i = 0; i < sprite->width; i++){
-            memcpy(&buffer[(posx+i)*SCREEN_WIDTH+posy], &sprite->data[i*sprite->width], sprite->width);
+            for(int j = 0; j < sprite->width; j++){
+                uint8_t pixel = sprite->data[i*sprite->width + j];
+                if(pixel != CHROMA_KEY)
+                    buffer[(posx+i)*SCREEN_WIDTH + posy+j] = pixel;
+            }
         }
     }
 
