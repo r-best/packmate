@@ -45,7 +45,7 @@ void BootScreen::custom_render() {
     LCD::draw_text("Booting Packmate.....", 20, 20, 240);
     LCD::draw_text("--------------------------", 20, 30, 220);
     for (int i = 0; i < BOOT_ITEM_COUNT; i++) {
-        uint8_t row_pos = 30+25*(i+1);
+        uint8_t row_pos = 20+25*(i+1);
 
         switch (statuses[i]) {
             case -1:

@@ -4,9 +4,9 @@
 #include <stdio.h>
 #include "pico/stdlib.h"
 
-#define SPRITE_LIMIT_240 1
-#define SPRITE_LIMIT_128 10
-#define SPRITE_LIMIT_64  10
+#define SPRITE_LIMIT_240 5
+#define SPRITE_LIMIT_128 50
+#define SPRITE_LIMIT_64  100
 
 #define SPRITE_SIZE_240 (240 * 240)
 #define SPRITE_SIZE_128 (128 * 128)
@@ -27,7 +27,7 @@ namespace SD {
         uint8_t sizeClass; // 64, 128, or 240
         int capacity; // sizeClass squared (the full size of the image)
         bool loaded;
-        const char *filename;
+        char filename[64];
         uint8_t ref_count;
         uint32_t last_access_us;
         Sprite sprite;

@@ -10,9 +10,9 @@
 #include "src/hardware/display/lcd.h"
 
 
-inline constexpr const char* boot_items[7] = {
+inline constexpr const char* boot_items[8] = {
     "[c0] display", "[c0] trackball", "[c0] rgb_matrix", // Core 0 items
-    "[c1] buzzer", "[c1] SD card", "[c1] wireless", // Core 1 items
+    "[c1] PSRAM", "[c1] SD card", "[c1] buzzer", "[c1] wireless", // Core 1 items
     "secrets",
 };
 const size_t BOOT_ITEM_COUNT = sizeof(boot_items) / sizeof(boot_items[0]);

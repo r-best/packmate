@@ -3,6 +3,8 @@
 #include "pico/multicore.h"
 #include "hardware/spi.h"
 #include "pico/cyw43_arch.h"
+#include "hardware/gpio.h"
+#include "hardware/structs/xip.h"
 
 #include "src/hardware/watchdog/watchdog.h"
 #include "src/screens/screen_manager.h"
@@ -44,16 +46,26 @@ int init_debug_connections() {
     return 0;
 }
 
+int init_psram() {
+    // Configure GPIO 47 as QSPI CS1 for the PSRAM chip
+    gpio_set_function(PIMORONI_PICO_PLUS2_W_PSRAM_CS_PIN, GPIO_FUNC_XIP_CS1);
+
+    // XIP window 1 is read-only by default; must opt in to writes for PSRAM.
+    // Covers both cached (0x11000000) and uncached (0x15000000)
+    // https://forums.raspberrypi.com/viewtopic.php?t=390346
+    hw_set_bits(&xip_ctrl_hw->ctrl, XIP_CTRL_WRITABLE_M1_BITS);
+
+    return 0;
+}
+
 int init_secondary_hardware() {
     int status;
 
     sleep_ms(500);
 
-    printf("Initializing buzzer\n");
-    status = Buzzer::init();
+    printf("Initializing PSRAM\n");
+    status = init_psram();
     bootScreen->update_status(3, status==0);
-
-    sleep_ms(500);
 
     printf("Mounting SD card\n");
     status = SD::init();
@@ -61,14 +73,20 @@ int init_secondary_hardware() {
 
     sleep_ms(500);
 
+    printf("Initializing buzzer\n");
+    status = Buzzer::init();
+    bootScreen->update_status(5, status==0);
+
+    sleep_ms(500);
+
     // Initialise the Wi-Fi chip
     printf("Initializing wifi chip\n");
     if (cyw43_arch_init()) {
         printf("Wi-Fi init failed\n");
-        bootScreen->update_status(5, false);
+        bootScreen->update_status(6, false);
         return -1;
     }
-    bootScreen->update_status(5, true);
+    bootScreen->update_status(6, true);
 
     sleep_ms(500);
 

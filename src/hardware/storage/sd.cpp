@@ -7,10 +7,15 @@
 #include "f_util.h"
 
 namespace SD {
-    // Memory backing for sprites to be loaded into dynamically
-    static uint8_t sprite240_memory[SPRITE_LIMIT_240][SPRITE_SIZE_240];
-    static uint8_t sprite128_memory[SPRITE_LIMIT_128][SPRITE_SIZE_128];
-    static uint8_t sprite64_memory[SPRITE_LIMIT_64][SPRITE_SIZE_64];
+    // Direct pointers into the uncached PSRAM alias (0x15000000 = XIP_NOCACHE_NOALLOC + CS1 offset).
+    // We want to skip the XIP cache because these aren't code instructions, they're large data blocks, they
+    // would overwhelm the small cache and cause a bunch of misses when actual instructions try to run
+    static constexpr uintptr_t PSRAM_BASE  = 0x15000000u;
+    static constexpr size_t    POOL240_SZ  = (size_t)SPRITE_LIMIT_240 * SPRITE_SIZE_240;
+    static constexpr size_t    POOL128_SZ  = (size_t)SPRITE_LIMIT_128 * SPRITE_SIZE_128;
+    static uint8_t (* const sprite240_memory)[SPRITE_SIZE_240] = (uint8_t(*)[SPRITE_SIZE_240])(PSRAM_BASE);
+    static uint8_t (* const sprite128_memory)[SPRITE_SIZE_128] = (uint8_t(*)[SPRITE_SIZE_128])(PSRAM_BASE + POOL240_SZ);
+    static uint8_t (* const sprite64_memory)[SPRITE_SIZE_64] = (uint8_t(*)[SPRITE_SIZE_64])  (PSRAM_BASE + POOL240_SZ + POOL128_SZ);
 
     static FATFS fs;
     static SpritePool pool;
@@ -20,7 +25,7 @@ namespace SD {
         slot.sizeClass = sizeClass;
         slot.capacity = capacity;
         slot.loaded = false;
-        slot.filename = nullptr;
+        slot.filename[0] = '\0';
         slot.ref_count = 0;
         slot.last_access_us = 0;
         slot.sprite = Sprite(data, sizeClass, capacity);
@@ -49,17 +54,17 @@ namespace SD {
 
     static SpriteSlot* check_cache(const char *filename) {
         for (int i = 0; i < SPRITE_LIMIT_240; i++) {
-            if (pool.slots240[i].loaded && pool.slots240[i].filename && strcmp(pool.slots240[i].filename, filename) == 0) {
+            if (pool.slots240[i].loaded && strcmp(pool.slots240[i].filename, filename) == 0) {
                 return &pool.slots240[i];
             }
         }
         for (int i = 0; i < SPRITE_LIMIT_128; i++) {
-            if (pool.slots128[i].loaded && pool.slots128[i].filename && strcmp(pool.slots128[i].filename, filename) == 0) {
+            if (pool.slots128[i].loaded && strcmp(pool.slots128[i].filename, filename) == 0) {
                 return &pool.slots128[i];
             }
         }
         for (int i = 0; i < SPRITE_LIMIT_64; i++) {
-            if (pool.slots64[i].loaded && pool.slots64[i].filename && strcmp(pool.slots64[i].filename, filename) == 0) {
+            if (pool.slots64[i].loaded && strcmp(pool.slots64[i].filename, filename) == 0) {
                 return &pool.slots64[i];
             }
         }
@@ -104,7 +109,7 @@ namespace SD {
         }
 
         if (candidate) {
-            candidate->filename = nullptr;
+            candidate->filename[0] = '\0';
             candidate->last_access_us = 0;
             return candidate;
         }
@@ -141,7 +146,7 @@ namespace SD {
             printf("Failed to read file: %s\n", filename);
             f_close(&fil);
             slot->loaded = false;
-            slot->filename = nullptr;
+            slot->filename[0] = '\0';
             slot->ref_count = 0;
             slot->last_access_us = 0;
             return nullptr;
@@ -149,7 +154,8 @@ namespace SD {
 
         f_close(&fil);
 
-        slot->filename = filename;
+        strncpy(slot->filename, filename, sizeof(slot->filename) - 1);
+        slot->filename[sizeof(slot->filename) - 1] = '\0';
         slot->ref_count = 1;
         slot->last_access_us = time_us_32();
         slot->sprite.data = slot->data;

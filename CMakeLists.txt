@@ -3,7 +3,7 @@ set(OUTPUT_NAME packmate)
 
 set(PIMORONI_PICO_PATH ${CMAKE_CURRENT_LIST_DIR}/lib/pimoroni-pico)
 set(PICO_CXX_ENABLE_EXCEPTIONS 1)
-set(PICO_BOARD pico2_w CACHE STRING "Board type")
+set(PICO_BOARD pimoroni_pico_plus2_w_rp2350 CACHE STRING "Board type")
 
 # Print environment for debugging
 execute_process(
