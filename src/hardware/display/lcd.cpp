@@ -12,6 +12,8 @@
 namespace LCD {
     const int SCREEN_WIDTH = 240;
     const int SCREEN_HEIGHT = 240;
+    constexpr uint8_t CHROMA_KEY = 0xE3; // RGB332 magenta — treated as transparent
+
     static uint8_t buffer[SCREEN_WIDTH * SCREEN_HEIGHT];
 
     pimoroni::ST7789 st7789(SCREEN_WIDTH, SCREEN_HEIGHT, pimoroni::ROTATE_0, false, {spi1, 9U, 10U, 11U, pimoroni::PIN_UNUSED, 8U, 13U});

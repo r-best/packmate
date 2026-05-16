@@ -80,7 +80,8 @@ protected:
         return sprite;
     }
     SD::Sprite* loadSprite(SpriteID id) {
-        return loadSprite(SPRITE_PATHS[static_cast<int>(id)]);
+        const SpriteInfo &info = SPRITE_INFO[static_cast<int>(id)];
+        return SD::load_sprite(info.path, info.width, info.frame_count);
     }
 public:
     // Timestamp when the screen was pushed onto the stack

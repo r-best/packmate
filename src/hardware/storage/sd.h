@@ -15,17 +15,16 @@
 namespace SD {
     struct Sprite {
         uint8_t *data;
-        int width;
-        int size;
-        Sprite(): data(nullptr), width(0), size(0) {}
-        Sprite(uint8_t *data, uint8_t width, int size):
-            data(data), width(width), size(size) {}
+        uint8_t width; // frame width in pixels (same as height, sprites are squares)
+        uint8_t frame_count;
+        uint32_t size; // total bytes (width * width * frame_count)
+        Sprite(): data(nullptr), width(0), frame_count(1), size(0) {}
+        Sprite(uint8_t *data, uint8_t width, uint8_t frame_count, int size):
+            data(data), width(width), frame_count(frame_count), size(size) {}
     };
 
     struct SpriteSlot {
-        uint8_t *data; // Points to a space in one of the spriteXXX_memory banks where the sprite is loaded
-        uint8_t sizeClass; // 64, 128, or 240
-        int capacity; // sizeClass squared (the full size of the image)
+        uint8_t *data; // Points to a space in one of the sprite memory banks over in sd.cpp
         bool loaded;
         char filename[64];
         uint8_t ref_count;
@@ -39,7 +38,7 @@ namespace SD {
     };
 
     int init();
-    Sprite* load_sprite(const char *filename);
+    Sprite* load_sprite(const char *filename, uint8_t frame_width = 0, uint8_t frame_count = 1);
     void release_sprite(Sprite *sprite);
 }
 
