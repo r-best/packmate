@@ -72,13 +72,6 @@ protected:
     std::vector<SD::Sprite*> ownedSprites;
     std::vector<Widget*> widgets;
 
-    SD::Sprite* loadSprite(const char *filename) {
-        SD::Sprite* sprite = SD::load_sprite(filename);
-        if (sprite) {
-            ownedSprites.push_back(sprite);
-        }
-        return sprite;
-    }
     SD::Sprite* loadSprite(SpriteID id) {
         const SpriteInfo &info = SPRITE_INFO[static_cast<int>(id)];
         return SD::load_sprite(info.path, info.width, info.frame_count);

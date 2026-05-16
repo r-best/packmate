@@ -23,22 +23,8 @@ namespace SD {
             data(data), width(width), frame_count(frame_count), size(size) {}
     };
 
-    struct SpriteSlot {
-        uint8_t *data; // Points to a space in one of the sprite memory banks over in sd.cpp
-        bool loaded;
-        char filename[64];
-        uint8_t ref_count;
-        uint32_t last_access_us;
-        Sprite sprite;
-    };
-    struct SpritePool {
-        SpriteSlot slots240[SPRITE_LIMIT_240];
-        SpriteSlot slots128[SPRITE_LIMIT_128];
-        SpriteSlot slots64[SPRITE_LIMIT_64];
-    };
-
     int init();
-    Sprite* load_sprite(const char *filename, uint8_t frame_width = 0, uint8_t frame_count = 1);
+    Sprite* load_sprite(const char *filename, uint8_t frame_width, uint8_t frame_count);
     void release_sprite(Sprite *sprite);
 }
 
