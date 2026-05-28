@@ -14,7 +14,7 @@ namespace LCD {
     int init();
     void set_backlight(int brightness);
     void set_pen_color(uint8_t r, uint8_t g, uint8_t b);
-    void draw_sprite(SD::Sprite *sprite, uint8_t posx, uint8_t posy, bool transparent = false, uint8_t frame = 0);
+    void draw_sprite(SD::Sprite *sprite, uint8_t posx, uint8_t posy, bool transparent = false, uint8_t frame = 0, uint8_t scale = 1);
     void draw_text(std::string msg, uint8_t posx, uint8_t posy, uint8_t wrap);
     void draw_rect(int32_t x, int32_t y, int32_t w, int32_t h);
     void draw_line(int32_t x1, int32_t y1, int32_t x2, int32_t y2);

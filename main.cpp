@@ -24,7 +24,7 @@
 #include "tusb.h"
 #endif
 
-uint8_t MAIN_FPS = 20;
+uint8_t MAIN_FPS = 60;
 uint32_t FRAME_INTERVAL_US = 1000000 / MAIN_FPS; // Storing this as microseconds because the timer function returns microseconds
 uint32_t WAIT_INTERVAL_MS = FRAME_INTERVAL_US / 4 / 1000; // Wait 1/4 of frame interval between loops to save CPU, no need to check constantly. Could probably even drop to 1/2
 

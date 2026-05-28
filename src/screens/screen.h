@@ -28,6 +28,14 @@ struct InputState {
 class Widget {
 protected:
     bool stale = true;
+    std::vector<SD::Sprite*> ownedSprites;
+
+    SD::Sprite* loadSprite(SpriteID id) {
+        const SpriteInfo &info = SPRITE_INFO[static_cast<int>(id)];
+        SD::Sprite *s = SD::load_sprite(info.path, info.width, info.frame_count);
+        if (s) ownedSprites.push_back(s);
+        return s;
+    }
 public:
     int16_t x, y, w, h;
     SD::Sprite *sprite;
@@ -44,7 +52,11 @@ public:
     };
     virtual void render() = 0;
 
-    virtual ~Widget() = default;
+    virtual ~Widget() {
+        for (SD::Sprite *s : ownedSprites) {
+            SD::release_sprite(s);
+        }
+    }
 };
 
 class ClickableWidget: public Widget {

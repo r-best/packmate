@@ -4,7 +4,8 @@ upload:
 
 .PHONY: upload-sprites
 upload-sprites:
-	./sprites/convert_all.sh
+	./sprites/scripts/convert_all.sh
+	rm -rf /media/bobby/1220-094F/sprites/
 	rsync -av --include='*/' --include='*.rgb332' --exclude='*' ./sprites/ /media/bobby/1220-094F/sprites/
 
 .PHONY: serial

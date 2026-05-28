@@ -21,15 +21,17 @@ def image_to_data(image):
     """Generator function to convert a PIL image to 16-bit 565 RGB bytes."""
     # NumPy is much faster at doing this. NumPy code provided by:
     # Keith (https://www.blogger.com/profile/02555547344016007163)
+    CHROMAKEY = 0xE3  # Magenta in RGB332 — used as transparency replacement
+
     pb = numpy.array(image.convert('RGBA')).astype('uint16')
 
     r = (pb[:, :, 0] & 0b11100000) >> 0
     g = (pb[:, :, 1] & 0b11100000) >> 3
     b = (pb[:, :, 2] & 0b11000000) >> 6
-    a = pb[:, :, 3] # Discard
+    a = pb[:, :, 3]
 
-    # AAAA RRRR GGGG BBBB
     color = r | g | b
+    color[a == 0] = CHROMAKEY
     return color.astype("uint8").flatten().tobytes()
 
 

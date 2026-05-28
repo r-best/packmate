@@ -13,6 +13,7 @@
     X(MENU_SOCIAL,   "sprites/menu/social.rgb332",     64,   1) \
     X(MENU_SHOP,     "sprites/menu/shop.rgb332",       64,   1) \
     X(MENU_SETTINGS, "sprites/menu/settings.rgb332",   64,   1) \
+    X(CHARACTER,     "sprites/user_sprites/character.rgb332",  64,   8) \
 
 enum class SpriteID {
 #define X(id, path, width, frames) id,

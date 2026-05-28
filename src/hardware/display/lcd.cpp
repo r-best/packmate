@@ -54,10 +54,10 @@ namespace LCD {
         st7789.partial_update(&graphics, pimoroni::Rect(x, y, w, h));
     }
 
-    void draw_sprite(SD::Sprite *sprite, uint8_t posx, uint8_t posy, bool transparent, uint8_t frame) {
+    void draw_sprite(SD::Sprite *sprite, uint8_t posx, uint8_t posy, bool transparent, uint8_t frame, uint8_t scale) {
         uint8_t *frame_data = sprite->data + frame * sprite->width * sprite->width;
 
-        if(!transparent) {
+        if(!transparent && scale == 1) {
             if(sprite->width == SCREEN_WIDTH) {
                 memcpy(buffer, frame_data, sprite->width * sprite->width);
                 return;
@@ -71,8 +71,13 @@ namespace LCD {
         for(int i = 0; i < sprite->width; i++){
             for(int j = 0; j < sprite->width; j++){
                 uint8_t pixel = frame_data[i*sprite->width + j];
-                if(pixel != CHROMA_KEY)
-                    buffer[(posx+i)*SCREEN_WIDTH + posy+j] = pixel;
+                if(!transparent || pixel != CHROMA_KEY) {
+                    for(int si = 0; si < scale; si++) {
+                        for(int sj = 0; sj < scale; sj++) {
+                            buffer[(posx + i*scale + si)*SCREEN_WIDTH + posy + j*scale + sj] = pixel;
+                        }
+                    }
+                }
             }
         }
     }
