@@ -19,14 +19,49 @@ namespace LCD {
     pimoroni::ST7789 st7789(SCREEN_WIDTH, SCREEN_HEIGHT, pimoroni::ROTATE_0, false, {spi1, 9U, 10U, 11U, pimoroni::PIN_UNUSED, 8U, 13U});
     pimoroni::PicoGraphics_PenRGB332 graphics(st7789.width, st7789.height, buffer);
 
-    int init() {
-        uint actual = spi_set_baudrate(spi1, 75000000);
-        if (actual < 10000000) {
-            printf("SPI is being limited\n");
-            return -1;
-        }
+    void write_cmd(uint8_t cmd) {
+        gpio_put(8, 0); // DC low for commands
+        gpio_put(9, 0); // CS low
+        spi_write_blocking(spi1, &cmd, 1);
+        gpio_put(9, 1); // CS high
+    }
+    void write_cmd(uint8_t cmd, uint8_t data) {
+        write_cmd(cmd);
+        gpio_put(8, 1); // DC high for data
+        gpio_put(9, 0); // CS low
+        spi_write_blocking(spi1, &data, 1);
+        gpio_put(9, 1); // CS high
+    }
 
-        // st7789.set_backlight(128); // Backlight control is CANCELLED until I can fix the flickering issue (too high power draw)
+    int init() {
+        // SPI setup
+        spi_init(spi1, 75000000);
+        
+        // Hardware reset
+        gpio_init(7);
+        gpio_set_dir(7, GPIO_OUT);
+        gpio_put(7, 0);
+        sleep_ms(50);
+        gpio_put(7, 1);
+        sleep_ms(150);
+
+        // Software reset
+        write_cmd(0x01);
+        sleep_ms(150);
+
+        write_cmd(0x11); // Sleep out
+        sleep_ms(150);
+
+        // Color mode = RGB565
+        write_cmd(0x3A, 0x55);
+        // sleep_ms(10);
+
+        write_cmd(0x36, 0x00); // Memory access control
+        write_cmd(0x21); // Inversion on
+        // write_cmd(0x13); // Normal display mode
+        write_cmd(0x29); // Display on
+        sleep_ms(100);
+
         graphics.clear();
         st7789.update(&graphics);
         return 0;

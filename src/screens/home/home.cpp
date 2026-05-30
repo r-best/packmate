@@ -28,6 +28,5 @@ bool HomeScreen::update(InputState *input) {
 }
 
 void HomeScreen::custom_render() {
-    // LCD::draw_sprite(ui_sprite, 0, 0);
-    LCD::clear_screen();
+    
 }

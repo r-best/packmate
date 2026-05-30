@@ -42,6 +42,7 @@ bool ScreenManager::update(InputState *input) {
 
     bool doRender = current->update(input);
     if (doRender) {
+        LCD::clear_screen();
         // Need to fetch active screen again in case the update caused a screen change
         active()->render();
     }
