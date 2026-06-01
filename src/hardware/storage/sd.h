@@ -8,9 +8,9 @@
 #define SPRITE_LIMIT_128 50
 #define SPRITE_LIMIT_64  100
 
-#define SPRITE_SIZE_240 (240 * 240)
-#define SPRITE_SIZE_128 (128 * 128)
-#define SPRITE_SIZE_64  (64 * 64)
+#define SPRITE_SIZE_240 (240 * 240 * 2)
+#define SPRITE_SIZE_128 (128 * 128 * 2)
+#define SPRITE_SIZE_64  (64 * 64 * 2)
 
 namespace SD {
     struct Sprite {

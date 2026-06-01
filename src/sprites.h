@@ -5,15 +5,15 @@
 
 //      id                    path                   width frames
 #define SPRITE_LIST \
-    X(UI_BASE,       "sprites/ui_base.rgb332",        240,   1) \
-    X(HOME_MAIL,     "sprites/home/mail.rgb332",       64,   1) \
-    X(MENU_FOOD,     "sprites/menu/food.rgb332",       64,   1) \
-    X(MENU_PLAY,     "sprites/menu/play.rgb332",       64,   1) \
-    X(MENU_BACK,     "sprites/menu/back.rgb332",       64,   1) \
-    X(MENU_SOCIAL,   "sprites/menu/social.rgb332",     64,   1) \
-    X(MENU_SHOP,     "sprites/menu/shop.rgb332",       64,   1) \
-    X(MENU_SETTINGS, "sprites/menu/settings.rgb332",   64,   1) \
-    X(CHARACTER,     "sprites/user_sprites/character.rgb332",  64,   8) \
+    X(UI_BASE,       "sprites/ui_base.rgb565",        240,   1) \
+    X(HOME_MAIL,     "sprites/home/mail.rgb565",       64,   1) \
+    X(MENU_FOOD,     "sprites/menu/food.rgb565",       64,   1) \
+    X(MENU_PLAY,     "sprites/menu/play.rgb565",       64,   1) \
+    X(MENU_BACK,     "sprites/menu/back.rgb565",       64,   1) \
+    X(MENU_SOCIAL,   "sprites/menu/social.rgb565",     64,   1) \
+    X(MENU_SHOP,     "sprites/menu/shop.rgb565",       64,   1) \
+    X(MENU_SETTINGS, "sprites/menu/settings.rgb565",   64,   1) \
+    X(CHARACTER,     "sprites/user_sprites/character.rgb565",  64,   8) \
 
 enum class SpriteID {
 #define X(id, path, width, frames) id,

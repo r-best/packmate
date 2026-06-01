@@ -131,8 +131,8 @@ namespace SD {
             return nullptr;
         }
         int file_size = f_size(&fil);
-
-        int needed_bytes = frame_width * frame_width * frame_count;
+        
+        int needed_bytes = frame_width * frame_width * frame_count * 2;
         SpriteSlot *slot = find_best_pool(needed_bytes);
         if (!slot) {
             f_close(&fil);

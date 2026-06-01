@@ -5,8 +5,10 @@ upload:
 .PHONY: upload-sprites
 upload-sprites:
 	./sprites/scripts/convert_all.sh
-	rm -rf /media/bobby/1220-094F/sprites/
-	rsync -av --include='*/' --include='*.rgb332' --exclude='*' ./sprites/ /media/bobby/1220-094F/sprites/
+	rm -rf /media/bobby/PACKMATE/sprites/
+	rsync -av --include='*/' --include='*.rgb565' --exclude='*' ./sprites/ /media/bobby/PACKMATE/sprites/
+	udisksctl unmount -b /dev/disk/by-label/PACKMATE
+	udisksctl power-off -b /dev/disk/by-label/PACKMATE
 
 .PHONY: serial
 serial:

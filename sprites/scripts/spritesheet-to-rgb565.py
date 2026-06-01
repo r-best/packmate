@@ -14,25 +14,25 @@ import pathlib
 
 # Run with `./filename.py source-image.jpg`
 IMAGE_PATH = pathlib.Path(sys.argv[1])
-OUTPUT_PATH = IMAGE_PATH.with_suffix(".rgb332")
+OUTPUT_PATH = IMAGE_PATH.with_suffix(".rgb565")
 
+CHROMAKEY = 0xF81F  # RGB565 magenta, used as transparency replacement
 
 def image_to_data(image):
     """Generator function to convert a PIL image to 16-bit 565 RGB bytes."""
     # NumPy is much faster at doing this. NumPy code provided by:
     # Keith (https://www.blogger.com/profile/02555547344016007163)
-    CHROMAKEY = 0xE3  # Magenta in RGB332 — used as transparency replacement
 
     pb = numpy.array(image.convert('RGBA')).astype('uint16')
 
-    r = (pb[:, :, 0] & 0b11100000) >> 0
-    g = (pb[:, :, 1] & 0b11100000) >> 3
-    b = (pb[:, :, 2] & 0b11000000) >> 6
+    r = pb[:, :, 0] >> 3   # 5 bits
+    g = pb[:, :, 1] >> 2   # 6 bits
+    b = pb[:, :, 2] >> 3   # 5 bits
     a = pb[:, :, 3]
 
-    color = r | g | b
+    color = (r << 11) | (g << 5) | b
     color[a == 0] = CHROMAKEY
-    return color.astype("uint8").flatten().tobytes()
+    return color.astype('>u2').flatten().tobytes()
 
 
 img = Image.open(IMAGE_PATH)
