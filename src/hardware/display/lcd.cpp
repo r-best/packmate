@@ -12,12 +12,12 @@
 namespace LCD {
     const int SCREEN_WIDTH = 240;
     const int SCREEN_HEIGHT = 240;
-    constexpr uint8_t CHROMA_KEY = 0xE3; // RGB332 magenta — treated as transparent
+    constexpr uint16_t CHROMA_KEY = 0x1FF8; // RGB565 magenta, treated as transparent
 
-    static uint8_t buffer[SCREEN_WIDTH * SCREEN_HEIGHT];
+    static uint16_t buffer[SCREEN_WIDTH * SCREEN_HEIGHT];
 
     pimoroni::ST7789 st7789(SCREEN_WIDTH, SCREEN_HEIGHT, pimoroni::ROTATE_0, false, {spi1, 9U, 10U, 11U, pimoroni::PIN_UNUSED, 8U, 13U});
-    pimoroni::PicoGraphics_PenRGB332 graphics(st7789.width, st7789.height, buffer);
+    pimoroni::PicoGraphics_PenRGB565 graphics(st7789.width, st7789.height, buffer);
 
     void write_cmd(uint8_t cmd) {
         gpio_put(8, 0); // DC low for commands
@@ -90,22 +90,22 @@ namespace LCD {
     }
 
     void draw_sprite(SD::Sprite *sprite, uint8_t posx, uint8_t posy, bool transparent, uint8_t frame, uint8_t scale) {
-        uint8_t *frame_data = sprite->data + frame * sprite->width * sprite->width;
+        uint16_t *frame_data = (uint16_t*)sprite->data + frame * sprite->width * sprite->width;
 
         if(!transparent && scale == 1) {
             if(sprite->width == SCREEN_WIDTH) {
-                memcpy(buffer, frame_data, sprite->width * sprite->width);
+                memcpy(buffer, frame_data, sprite->width * sprite->width * sizeof(uint16_t));
                 return;
             }
             for(int i = 0; i < sprite->width; i++){
-                memcpy(&buffer[(posx+i)*SCREEN_WIDTH+posy], &frame_data[i*sprite->width], sprite->width);
+                memcpy(&buffer[(posx+i)*SCREEN_WIDTH+posy], &frame_data[i*sprite->width], sprite->width * sizeof(uint16_t));
             }
             return;
         }
 
         for(int i = 0; i < sprite->width; i++){
             for(int j = 0; j < sprite->width; j++){
-                uint8_t pixel = frame_data[i*sprite->width + j];
+                uint16_t pixel = frame_data[i*sprite->width + j];
                 if(!transparent || pixel != CHROMA_KEY) {
                     for(int si = 0; si < scale; si++) {
                         for(int sj = 0; sj < scale; sj++) {
