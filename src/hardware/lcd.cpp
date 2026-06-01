@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "pico/stdlib.h"
-#include "src/hardware/storage/sd.h"
+#include "src/hardware/sd.h"
 #include "src/sprites.h"
 
 #include "drivers/st7789/st7789.hpp"
