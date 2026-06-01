@@ -5,7 +5,7 @@
 #include <string>
 #include "pico/stdlib.h"
 
-#include "src/hardware/storage/sd.h"
+#include "src/hardware/sd.h"
 
 namespace LCD {
     extern const int SCREEN_WIDTH;

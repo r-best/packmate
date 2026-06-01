@@ -7,7 +7,7 @@
 #include "pico/stdlib.h"
 
 #include "src/screens/screen_manager.h"
-#include "src/hardware/display/lcd.h"
+#include "src/hardware/lcd.h"
 
 class MenuScreen: public Screen {
 public:

@@ -8,7 +8,7 @@
 
 #include "src/screens/screen_manager.h"
 #include "src/screens/screen.h"
-#include "src/hardware/display/lcd.h"
+#include "src/hardware/lcd.h"
 
 struct buttonDef {
     const char* label;

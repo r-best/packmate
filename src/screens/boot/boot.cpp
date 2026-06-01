@@ -6,8 +6,8 @@
 #include "src/screens/screen_manager.h"
 #include "src/screens/screen.h"
 #include "src/screens/menu/menu.h"
-#include "src/hardware/display/lcd.h"
-#include "src/hardware/storage/sd.h"
+#include "src/hardware/lcd.h"
+#include "src/hardware/sd.h"
 
 bool BootScreen::all_successful() {
     // Minus 1 here to not count "secrets" item

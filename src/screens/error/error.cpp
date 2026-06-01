@@ -9,9 +9,9 @@
 #include "src/screens/screen_manager.h"
 #include "src/screens/screen.h"
 #include "src/screens/menu/menu.h"
-#include "src/hardware/watchdog/watchdog.h"
-#include "src/hardware/display/lcd.h"
-#include "src/hardware/storage/sd.h"
+#include "src/hardware/watchdog.h"
+#include "src/hardware/lcd.h"
+#include "src/hardware/sd.h"
 
 ErrorScreen::ErrorScreen(std::string e): Screen() {
     error_msg = std::move(e);

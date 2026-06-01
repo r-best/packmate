@@ -6,7 +6,7 @@
 #include "pico/stdlib.h"
 #include "pico/time.h"
 
-#include "src/hardware/inputs/trackball.h"
+#include "src/hardware/trackball.h"
 #include "src/screens/screen.h"
 #include "src/screens/home/home.h"
 #include "src/screens/menu/menu.h"

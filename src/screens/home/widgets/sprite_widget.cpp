@@ -1,8 +1,8 @@
 #include "sprite_widget.h"
 
 #include "pico/stdlib.h"
-#include "src/hardware/display/lcd.h"
-#include "src/hardware/storage/sd.h"
+#include "src/hardware/lcd.h"
+#include "src/hardware/sd.h"
 
 SpriteWidget::SpriteWidget(SpriteID id, int16_t x, int16_t y, uint8_t scale, bool transparent, uint32_t frame_interval_us)
     : scale(scale), transparent(transparent), frame_interval_us(frame_interval_us), sprite(nullptr), frame(0), last_anim_us(time_us_32()) {

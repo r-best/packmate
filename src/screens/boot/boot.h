@@ -7,7 +7,7 @@
 #include "pico/stdlib.h"
 
 #include "src/screens/screen.h"
-#include "src/hardware/display/lcd.h"
+#include "src/hardware/lcd.h"
 
 
 inline constexpr const char* boot_items[8] = {

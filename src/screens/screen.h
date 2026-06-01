@@ -5,8 +5,8 @@
 #include <functional>
 #include <vector>
 
-#include "src/hardware/inputs/trackball.h"
-#include "src/hardware/storage/sd.h"
+#include "src/hardware/trackball.h"
+#include "src/hardware/sd.h"
 #include "src/sprites.h"
 
 enum ScreenID {

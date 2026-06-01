@@ -6,7 +6,7 @@
 #include "pico/stdlib.h"
 
 #include "src/screens/screen.h"
-#include "src/hardware/display/lcd.h"
+#include "src/hardware/lcd.h"
 
 class ErrorScreen: public Screen {
 public:

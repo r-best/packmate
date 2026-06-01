@@ -6,17 +6,17 @@
 #include "hardware/gpio.h"
 #include "hardware/structs/xip.h"
 
-#include "src/hardware/watchdog/watchdog.h"
+#include "src/hardware/watchdog.h"
 #include "src/screens/screen_manager.h"
 #include "src/screens/home/home.h"
 #include "src/screens/error/error.h"
 #include "src/screens/boot/boot.h"
 #include "src/screens/debug/debug.h"
-#include "src/hardware/inputs/trackball.h"
-#include "src/hardware/rgb_matrix/rgb_matrix.h"
-#include "src/hardware/display/lcd.h"
-#include "src/hardware/storage/sd.h"
-#include "src/hardware/sound/buzzer.h"
+#include "src/hardware/trackball.h"
+#include "src/hardware/rgb_matrix.h"
+#include "src/hardware/lcd.h"
+#include "src/hardware/sd.h"
+#include "src/hardware/buzzer.h"
 
 #define DEBUG
 
