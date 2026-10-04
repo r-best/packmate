@@ -1,0 +1,3 @@
+3DX_Same_Sky_Supplier: Same Sky
+3DX_Same_Sky_Description: Micro SD Card Connector, 9 Contacts, Connector and Ejector, Push In, Auto Eject Out, Surface Mount, 1.8 mm Height Above Board, Gold Flash
+3DX_Same_Sky_Model Number: MSD-4-A
