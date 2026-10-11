@@ -39,9 +39,9 @@
         "other_text_thickness": 0.15,
         "other_text_upright": false,
         "pads": {
-          "drill": 0.8,
-          "height": 1.27,
-          "width": 2.54
+          "drill": 0.0,
+          "height": 2.2098,
+          "width": 1.1938
         },
         "silk_line_width": 0.1,
         "silk_text_italic": false,
@@ -60,7 +60,7 @@
           "hatch_smoothing_level": 0,
           "hatch_smoothing_value": 0.1,
           "hatch_thickness": 1.0,
-          "min_clearance": 0.5,
+          "min_clearance": 0.0,
           "min_island_area": 10.0,
           "min_thickness": 0.25,
           "pad_connection": 1,
@@ -70,7 +70,16 @@
         }
       },
       "diff_pair_dimensions": [],
-      "drc_exclusions": [],
+      "drc_exclusions": [
+        [
+          "courtyards_overlap|105975000|90025000|30b9dfdc-753e-47d9-8eec-0de28e29daba|3fdcb260-9978-45ba-98c8-3feec0d56fac",
+          "Intentional, the pico is socketed so this resistor fits under it no problem"
+        ],
+        [
+          "courtyards_overlap|106567500|85975000|30b9dfdc-753e-47d9-8eec-0de28e29daba|cf34ff0d-a1b0-4741-960d-4937ea43b35a",
+          "Intentional, the pico is socketed so this mosfet fits under it no problem"
+        ]
+      ],
       "meta": {
         "version": 2
       },
@@ -641,7 +650,7 @@
       "include_excluded_from_bom": true,
       "name": "",
       "sort_asc": true,
-      "sort_field": "Reference"
+      "sort_field": "Footprint"
     },
     "bus_aliases": {},
     "connection_grid_size": 50.0,
@@ -684,7 +693,7 @@
         "uuid": "1b0954a2-3127-4772-a3bb-573d547242ae"
       }
     ],
-    "used_designators": "",
+    "used_designators": "#PWR1,R13,C9-18",
     "variants": []
   },
   "sheets": [

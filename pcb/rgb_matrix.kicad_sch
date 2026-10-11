@@ -5,6 +5,161 @@
 	(uuid "d9916c10-3753-4e05-9f05-f952bceba9c6")
 	(paper "A4")
 	(lib_symbols
+		(symbol "Device:C"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.254)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "C"
+				(at 0.635 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "C"
+				(at 0.635 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at 0.9652 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Unpolarized capacitor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "cap capacitor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "C_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "C_0_1"
+				(polyline
+					(pts
+						(xy -2.032 0.762) (xy 2.032 0.762)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.032 -0.762) (xy 2.032 -0.762)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "C_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 2.794)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 2.794)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "LED:WS2812B"
 			(pin_names
 				(offset 0.254)
@@ -278,7 +433,7 @@
 		)
 	)
 	(junction
-		(at 160.02 104.14)
+		(at 143.51 104.14)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "00ab1426-5e65-49ef-b4ca-4b421d0f7b61")
@@ -290,16 +445,28 @@
 		(uuid "0f3c0314-d6f3-412b-ab67-c6be176cb6e0")
 	)
 	(junction
+		(at 182.88 113.03)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "15e1a9e4-babc-4ca8-b4d7-7b9c9b931eb5")
+	)
+	(junction
 		(at 198.12 119.38)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "1d6e2087-5775-4e66-bc6d-21083247a365")
 	)
 	(junction
-		(at 175.26 104.14)
+		(at 158.75 104.14)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "1eaab14e-772a-466d-a770-00212230d088")
+	)
+	(junction
+		(at 182.88 128.27)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "3214d2fa-c02e-499a-be48-a0ba1367c861")
 	)
 	(junction
 		(at 182.88 88.9)
@@ -308,10 +475,34 @@
 		(uuid "37bed9ea-fe53-4801-af80-d196788093aa")
 	)
 	(junction
-		(at 160.02 119.38)
+		(at 143.51 119.38)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "390e1cb7-7953-43ba-8710-a9d83ceddd03")
+	)
+	(junction
+		(at 182.88 97.79)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "46bbeb09-dcb4-40cc-ab3b-eb8169f07c68")
+	)
+	(junction
+		(at 182.88 134.62)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "4e9979a2-8731-4fd3-9639-88e0d2e02dd4")
+	)
+	(junction
+		(at 158.75 113.03)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "4fe1f865-02e1-4f0d-9ff5-9732e42f43cf")
+	)
+	(junction
+		(at 158.75 88.9)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "57edfac3-198a-46c7-9703-9d9efb2300c8")
 	)
 	(junction
 		(at 198.12 134.62)
@@ -320,10 +511,16 @@
 		(uuid "62be4bfd-c60b-4ad9-90c9-241257a6e37b")
 	)
 	(junction
-		(at 175.26 134.62)
+		(at 158.75 134.62)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "69527127-490c-479f-9def-bb5f10ed0d71")
+	)
+	(junction
+		(at 143.51 88.9)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "7776754c-4a91-48d9-a071-0e746696f4de")
 	)
 	(junction
 		(at 198.12 88.9)
@@ -332,7 +529,13 @@
 		(uuid "7b800faf-738b-43b7-acdc-22679360bd72")
 	)
 	(junction
-		(at 160.02 134.62)
+		(at 158.75 128.27)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "7e9e7781-7418-4cdd-8f5c-cde9a2f37b84")
+	)
+	(junction
+		(at 143.51 134.62)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "8450c201-3514-43b2-8f34-e7f661817255")
@@ -350,10 +553,28 @@
 		(uuid "8fc317d1-462a-4294-ad62-dddd74bd253d")
 	)
 	(junction
+		(at 182.88 82.55)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ae7d87b8-9e06-46a5-964c-0e312f3e8177")
+	)
+	(junction
 		(at 198.12 58.42)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "b9fcb1a2-bb42-45e9-a0f2-99ff225fcea7")
+	)
+	(junction
+		(at 182.88 67.31)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c0ce4301-8f1f-4e5a-82cd-339a0e7f8a32")
+	)
+	(junction
+		(at 182.88 52.07)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d0abe336-04d8-4705-9de1-0cede5d1f22c")
 	)
 	(junction
 		(at 182.88 104.14)
@@ -362,7 +583,7 @@
 		(uuid "d7e25456-3b1b-468e-bcf6-1edd67701cf3")
 	)
 	(junction
-		(at 175.26 119.38)
+		(at 158.75 119.38)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "db9f35cb-fc44-4e0f-a2ad-2f0926bba53e")
@@ -374,20 +595,40 @@
 		(uuid "e19013af-65a8-459c-9dff-8978b549955e")
 	)
 	(junction
+		(at 158.75 97.79)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ec87e43d-82f6-4554-af76-d537306583b0")
+	)
+	(junction
 		(at 182.88 119.38)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "ee7bed17-d3bd-4bd3-ab5a-6a1e8aa1bc10")
 	)
-	(junction
-		(at 182.88 134.62)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "fb7ec7e6-a4a5-40d5-af04-a9a3f5b78711")
-	)
 	(no_connect
-		(at 167.64 81.28)
+		(at 151.13 81.28)
 		(uuid "528f0e1d-85de-4648-83c1-2454ea3775f0")
+	)
+	(wire
+		(pts
+			(xy 198.12 58.42) (xy 207.01 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "01d76f8e-1d9c-44b3-bb59-4083ed07a1ee")
+	)
+	(wire
+		(pts
+			(xy 182.88 52.07) (xy 182.88 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0401540b-a8a9-45ea-89f8-16574c070fa6")
 	)
 	(wire
 		(pts
@@ -401,7 +642,7 @@
 	)
 	(wire
 		(pts
-			(xy 160.02 134.62) (xy 160.02 119.38)
+			(xy 143.51 134.62) (xy 143.51 119.38)
 		)
 		(stroke
 			(width 0)
@@ -411,7 +652,17 @@
 	)
 	(wire
 		(pts
-			(xy 182.88 58.42) (xy 182.88 73.66)
+			(xy 207.01 90.17) (xy 208.28 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "113d6dfb-97a1-46bb-8b68-53967727d361")
+	)
+	(wire
+		(pts
+			(xy 182.88 58.42) (xy 182.88 67.31)
 		)
 		(stroke
 			(width 0)
@@ -421,7 +672,7 @@
 	)
 	(wire
 		(pts
-			(xy 167.64 142.24) (xy 190.5 142.24)
+			(xy 151.13 142.24) (xy 190.5 142.24)
 		)
 		(stroke
 			(width 0)
@@ -431,13 +682,93 @@
 	)
 	(wire
 		(pts
-			(xy 182.88 35.56) (xy 182.88 58.42)
+			(xy 133.35 104.14) (xy 143.51 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "19b876b2-22e3-4f5c-9747-1aee4f82df94")
+	)
+	(wire
+		(pts
+			(xy 182.88 35.56) (xy 182.88 52.07)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "1b4279f7-8c36-417a-ba33-7e0b8d23597c")
+	)
+	(wire
+		(pts
+			(xy 158.75 128.27) (xy 158.75 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1f289b06-cea9-4ef1-9f80-695f44bf5881")
+	)
+	(wire
+		(pts
+			(xy 133.35 105.41) (xy 133.35 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "25139c38-f92f-4155-be1b-bc31c9e7f52c")
+	)
+	(wire
+		(pts
+			(xy 132.08 82.55) (xy 158.75 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "275b8fdf-3a92-4fcd-81df-337b76abe091")
+	)
+	(wire
+		(pts
+			(xy 133.35 88.9) (xy 143.51 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2787161a-2eae-4b8b-a7f1-e53ec0ccefc1")
+	)
+	(wire
+		(pts
+			(xy 182.88 113.03) (xy 182.88 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "28b42a64-5915-468e-88df-46e05eec5331")
+	)
+	(wire
+		(pts
+			(xy 132.08 97.79) (xy 158.75 97.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "308d527a-aa1b-4912-88b6-168e508bf5ba")
+	)
+	(wire
+		(pts
+			(xy 182.88 67.31) (xy 208.28 67.31)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "331d3701-5ea3-4063-b0dd-071034311193")
 	)
 	(wire
 		(pts
@@ -448,6 +779,36 @@
 			(type default)
 		)
 		(uuid "33646a04-ff50-4f87-9964-6f0622ffc32e")
+	)
+	(wire
+		(pts
+			(xy 158.75 82.55) (xy 158.75 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3b49f1ad-e91f-424f-9ef4-921c5c700a63")
+	)
+	(wire
+		(pts
+			(xy 198.12 88.9) (xy 207.01 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3bbe420b-4501-4f49-a668-a0dcacfa1b18")
+	)
+	(wire
+		(pts
+			(xy 207.01 74.93) (xy 207.01 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3d495361-f1e7-4bf8-b3a4-8c340d8c5338")
 	)
 	(wire
 		(pts
@@ -471,7 +832,47 @@
 	)
 	(wire
 		(pts
-			(xy 182.88 73.66) (xy 182.88 88.9)
+			(xy 198.12 73.66) (xy 207.01 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "47868e76-b77d-48d0-aac2-e2f1945bf639")
+	)
+	(wire
+		(pts
+			(xy 133.35 134.62) (xy 143.51 134.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "47a8001b-69c9-4cc4-a8d9-eb74f49daef6")
+	)
+	(wire
+		(pts
+			(xy 182.88 82.55) (xy 182.88 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "48b7b07e-0431-4950-840a-40e22eace69d")
+	)
+	(wire
+		(pts
+			(xy 182.88 128.27) (xy 182.88 134.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4987d660-35dc-4ea9-90a3-24b2e6addb26")
+	)
+	(wire
+		(pts
+			(xy 182.88 73.66) (xy 182.88 82.55)
 		)
 		(stroke
 			(width 0)
@@ -491,7 +892,17 @@
 	)
 	(wire
 		(pts
-			(xy 175.26 104.14) (xy 175.26 88.9)
+			(xy 207.01 135.89) (xy 208.28 135.89)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4d96539d-61a1-42eb-ae17-92fa5360a265")
+	)
+	(wire
+		(pts
+			(xy 158.75 104.14) (xy 158.75 97.79)
 		)
 		(stroke
 			(width 0)
@@ -501,7 +912,7 @@
 	)
 	(wire
 		(pts
-			(xy 160.02 104.14) (xy 160.02 88.9)
+			(xy 143.51 104.14) (xy 143.51 88.9)
 		)
 		(stroke
 			(width 0)
@@ -521,7 +932,47 @@
 	)
 	(wire
 		(pts
-			(xy 160.02 119.38) (xy 160.02 104.14)
+			(xy 207.01 74.93) (xy 208.28 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5d3eeade-fe19-4d05-8376-614351f8e683")
+	)
+	(wire
+		(pts
+			(xy 182.88 97.79) (xy 182.88 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "69173218-b320-4941-8430-2445a6fe2a3c")
+	)
+	(wire
+		(pts
+			(xy 207.01 120.65) (xy 208.28 120.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "71e94bc8-4733-4f02-bcfe-54a5116b71f2")
+	)
+	(wire
+		(pts
+			(xy 207.01 135.89) (xy 207.01 134.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "728de0d2-2115-49c5-bb68-4b45530b3195")
+	)
+	(wire
+		(pts
+			(xy 143.51 119.38) (xy 143.51 104.14)
 		)
 		(stroke
 			(width 0)
@@ -531,13 +982,33 @@
 	)
 	(wire
 		(pts
-			(xy 182.88 104.14) (xy 182.88 119.38)
+			(xy 182.88 104.14) (xy 182.88 113.03)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "7bf23334-0967-4848-9181-f168975d32de")
+	)
+	(wire
+		(pts
+			(xy 132.08 90.17) (xy 133.35 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "805fe3a3-2ca6-408d-a69a-8acfcaec72f7")
+	)
+	(wire
+		(pts
+			(xy 158.75 113.03) (xy 158.75 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8226df3d-08b9-4f7b-9701-aa030df70d9d")
 	)
 	(wire
 		(pts
@@ -551,7 +1022,17 @@
 	)
 	(wire
 		(pts
-			(xy 182.88 88.9) (xy 182.88 104.14)
+			(xy 207.01 105.41) (xy 208.28 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "87aab97d-0ead-4044-b33c-b2be29cf8479")
+	)
+	(wire
+		(pts
+			(xy 182.88 88.9) (xy 182.88 97.79)
 		)
 		(stroke
 			(width 0)
@@ -561,13 +1042,63 @@
 	)
 	(wire
 		(pts
-			(xy 175.26 134.62) (xy 175.26 119.38)
+			(xy 207.01 90.17) (xy 207.01 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "92534661-9e59-4d74-8c55-1d3403cbf33a")
+	)
+	(wire
+		(pts
+			(xy 133.35 135.89) (xy 133.35 134.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "92ec6c35-0935-4375-94af-cc806db5d0f7")
+	)
+	(wire
+		(pts
+			(xy 158.75 134.62) (xy 158.75 128.27)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "9635891b-c84a-4746-9f43-21eec3365517")
+	)
+	(wire
+		(pts
+			(xy 198.12 104.14) (xy 207.01 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "98fc7079-ab99-419d-99dc-db8b75b7f7eb")
+	)
+	(wire
+		(pts
+			(xy 133.35 119.38) (xy 143.51 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9c7815d8-cd44-416e-80d1-907676d0502b")
+	)
+	(wire
+		(pts
+			(xy 132.08 135.89) (xy 133.35 135.89)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a6e023d5-20d2-4a1a-9630-a1d764df4e63")
 	)
 	(wire
 		(pts
@@ -581,6 +1112,16 @@
 	)
 	(wire
 		(pts
+			(xy 182.88 52.07) (xy 208.28 52.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "aa2d736e-05ee-4878-bf9a-c6214aa6cd28")
+	)
+	(wire
+		(pts
 			(xy 198.12 35.56) (xy 198.12 58.42)
 		)
 		(stroke
@@ -591,7 +1132,27 @@
 	)
 	(wire
 		(pts
-			(xy 160.02 147.32) (xy 160.02 134.62)
+			(xy 207.01 59.69) (xy 207.01 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b017299b-c68e-4e04-b6af-75a1ae5e74e0")
+	)
+	(wire
+		(pts
+			(xy 132.08 105.41) (xy 133.35 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b1dbd4c7-776a-4a38-8f02-540fbdc388d7")
+	)
+	(wire
+		(pts
+			(xy 143.51 147.32) (xy 143.51 134.62)
 		)
 		(stroke
 			(width 0)
@@ -608,6 +1169,36 @@
 			(type default)
 		)
 		(uuid "b5341617-e86b-43e3-833a-d33e374cbcb6")
+	)
+	(wire
+		(pts
+			(xy 182.88 97.79) (xy 208.28 97.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b79de859-b136-4363-8d14-e61789a7a859")
+	)
+	(wire
+		(pts
+			(xy 158.75 97.79) (xy 158.75 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bddb5d1d-ff3b-489a-bf70-6e5005e93feb")
+	)
+	(wire
+		(pts
+			(xy 182.88 67.31) (xy 182.88 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c1ade681-170d-4bbd-8193-74cd03a50185")
 	)
 	(wire
 		(pts
@@ -631,7 +1222,57 @@
 	)
 	(wire
 		(pts
-			(xy 182.88 119.38) (xy 182.88 134.62)
+			(xy 207.01 120.65) (xy 207.01 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c532bcac-80a8-4985-8907-e99094f2283d")
+	)
+	(wire
+		(pts
+			(xy 132.08 128.27) (xy 158.75 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c5c258d7-c4a1-48b3-a35b-1357f09849b4")
+	)
+	(wire
+		(pts
+			(xy 198.12 119.38) (xy 207.01 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c961169f-8622-4a9a-8b7a-c39e759482b3")
+	)
+	(wire
+		(pts
+			(xy 182.88 82.55) (xy 208.28 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d1276db9-10c7-4ca6-8ce0-94b7385856d1")
+	)
+	(wire
+		(pts
+			(xy 182.88 128.27) (xy 208.28 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d1d4d2ab-97e9-47ac-a8a9-7a60ff952c3f")
+	)
+	(wire
+		(pts
+			(xy 182.88 119.38) (xy 182.88 128.27)
 		)
 		(stroke
 			(width 0)
@@ -641,7 +1282,37 @@
 	)
 	(wire
 		(pts
-			(xy 175.26 134.62) (xy 182.88 134.62)
+			(xy 207.01 105.41) (xy 207.01 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d9979f59-5d58-44da-9bcc-6eff277332f7")
+	)
+	(wire
+		(pts
+			(xy 133.35 120.65) (xy 133.35 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dca7e707-c03d-40f7-a04d-13bcb9d8ba67")
+	)
+	(wire
+		(pts
+			(xy 132.08 113.03) (xy 158.75 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "de7afc43-2dd6-4df0-9d78-acf9a5eeaa2e")
+	)
+	(wire
+		(pts
+			(xy 158.75 134.62) (xy 182.88 134.62)
 		)
 		(stroke
 			(width 0)
@@ -651,7 +1322,37 @@
 	)
 	(wire
 		(pts
-			(xy 198.12 147.32) (xy 160.02 147.32)
+			(xy 133.35 90.17) (xy 133.35 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e94c4fd2-4a94-42ee-86aa-97e61c18fac1")
+	)
+	(wire
+		(pts
+			(xy 198.12 134.62) (xy 207.01 134.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f568fce8-fe4f-4ca5-84a6-6799730a023c")
+	)
+	(wire
+		(pts
+			(xy 132.08 120.65) (xy 133.35 120.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f5b85bb6-1cb5-4689-9d9b-97174ea3cd92")
+	)
+	(wire
+		(pts
+			(xy 198.12 147.32) (xy 143.51 147.32)
 		)
 		(stroke
 			(width 0)
@@ -661,7 +1362,27 @@
 	)
 	(wire
 		(pts
-			(xy 175.26 119.38) (xy 175.26 104.14)
+			(xy 207.01 59.69) (xy 208.28 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f80578d1-f01a-4be9-859d-220fbb54bef9")
+	)
+	(wire
+		(pts
+			(xy 182.88 113.03) (xy 208.28 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f891282f-fcaa-46ef-be89-72f5ce3675f0")
+	)
+	(wire
+		(pts
+			(xy 158.75 119.38) (xy 158.75 113.03)
 		)
 		(stroke
 			(width 0)
@@ -703,6 +1424,168 @@
 		(uuid "63ca60f8-2c7b-40e6-be29-b348ff9cac86")
 	)
 	(symbol
+		(lib_id "Device:C")
+		(at 208.28 71.12 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "05aabf75-c2bd-413c-be0c-44af22dc5885")
+		(property "Reference" "C10"
+			(at 199.136 69.342 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nF"
+			(at 199.136 71.882 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 209.2452 74.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 208.28 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 208.28 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "274a88ce-56a4-4c7e-ac31-67a8ef6984df")
+		)
+		(pin "1"
+			(uuid "9a731492-e890-4710-bd3b-bef304beb299")
+		)
+		(instances
+			(project "packmate"
+				(path "/1b0954a2-3127-4772-a3bb-573d547242ae/47a625cc-981e-43f8-ae95-3cb14e85e2ab"
+					(reference "C10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 132.08 101.6 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "1345110e-b961-47f1-9fd2-b60cce1ee29e")
+		(property "Reference" "C17"
+			(at 135.636 100.076 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nF"
+			(at 135.636 102.616 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 133.0452 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 132.08 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 132.08 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "de980244-45d8-48a4-9dfc-db6268fcbece")
+		)
+		(pin "1"
+			(uuid "3f287cea-379e-46b6-aadc-2043f232a7d9")
+		)
+		(instances
+			(project "packmate"
+				(path "/1b0954a2-3127-4772-a3bb-573d547242ae/47a625cc-981e-43f8-ae95-3cb14e85e2ab"
+					(reference "C17")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "LED:WS2812B")
 		(at 190.5 73.66 270)
 		(unit 1)
@@ -712,10 +1595,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "2450d996-f667-440d-bc98-09d51ea434e5")
 		(property "Reference" "D7"
-			(at 201.93 67.2398 90)
+			(at 177.8 68.834 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -725,7 +1607,7 @@
 			)
 		)
 		(property "Value" "WS2812B"
-			(at 201.93 69.7798 90)
+			(at 177.8 71.374 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -791,6 +1673,169 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:C")
+		(at 132.08 132.08 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "286102ce-39da-41ad-b1f9-d5fb898f77a0")
+		(property "Reference" "C15"
+			(at 135.89 130.8099 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nF"
+			(at 135.89 133.3499 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 133.0452 135.89 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 132.08 132.08 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 132.08 132.08 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "a5686406-fb8d-40d8-8eb6-c5ce6332ec22")
+		)
+		(pin "1"
+			(uuid "11e86859-d3e9-4865-95ff-1b7d49399e50")
+		)
+		(instances
+			(project "packmate"
+				(path "/1b0954a2-3127-4772-a3bb-573d547242ae/47a625cc-981e-43f8-ae95-3cb14e85e2ab"
+					(reference "C15")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 208.28 116.84 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "35d5206b-fb1c-4346-b2a2-aa5deb4b8634")
+		(property "Reference" "C13"
+			(at 199.136 115.062 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nF"
+			(at 199.136 117.602 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 209.2452 120.65 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 208.28 116.84 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 208.28 116.84 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "e5d75bbf-b8f6-49a4-b1d4-70143a1ae8be")
+		)
+		(pin "1"
+			(uuid "95cf8bce-35b8-4b62-94e2-af49abe0225c")
+		)
+		(instances
+			(project "packmate"
+				(path "/1b0954a2-3127-4772-a3bb-573d547242ae/47a625cc-981e-43f8-ae95-3cb14e85e2ab"
+					(reference "C13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "LED:WS2812B")
 		(at 190.5 104.14 270)
 		(unit 1)
@@ -800,10 +1845,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "375cd4f2-319d-4dfa-93d1-a92efa936975")
 		(property "Reference" "D9"
-			(at 201.93 97.7198 90)
+			(at 177.8 99.314 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -813,7 +1857,7 @@
 			)
 		)
 		(property "Value" "WS2812B"
-			(at 201.93 100.2598 90)
+			(at 177.8 101.854 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -880,7 +1924,7 @@
 	)
 	(symbol
 		(lib_id "LED:WS2812B")
-		(at 167.64 88.9 90)
+		(at 151.13 88.9 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -888,10 +1932,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "3fbf01a7-3439-4cae-9965-0a4303b00039")
 		(property "Reference" "D15"
-			(at 156.21 95.3202 90)
+			(at 164.338 86.36 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -901,7 +1944,7 @@
 			)
 		)
 		(property "Value" "WS2812B"
-			(at 156.21 92.7802 90)
+			(at 164.338 83.82 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -911,7 +1954,7 @@
 			)
 		)
 		(property "Footprint" "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm"
-			(at 175.26 87.63 0)
+			(at 158.75 87.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -923,7 +1966,7 @@
 			)
 		)
 		(property "Datasheet" "https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf"
-			(at 177.165 86.36 0)
+			(at 160.655 86.36 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -935,7 +1978,7 @@
 			)
 		)
 		(property "Description" "RGB LED with integrated controller"
-			(at 167.64 88.9 0)
+			(at 151.13 88.9 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -967,6 +2010,168 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:C")
+		(at 132.08 86.36 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "40a09873-0e48-4c48-b9a5-6c20f4edebb8")
+		(property "Reference" "C18"
+			(at 135.636 84.836 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nF"
+			(at 135.636 87.376 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 133.0452 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 132.08 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 132.08 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "6c86dcba-0033-4c9a-99b9-748883954efc")
+		)
+		(pin "1"
+			(uuid "812a9bbf-2cb7-4d3b-bc3e-2d315e102f45")
+		)
+		(instances
+			(project "packmate"
+				(path "/1b0954a2-3127-4772-a3bb-573d547242ae/47a625cc-981e-43f8-ae95-3cb14e85e2ab"
+					(reference "C18")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 208.28 86.36 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "45d6fe56-24e0-42d9-a644-5adc4ab82acf")
+		(property "Reference" "C11"
+			(at 199.136 84.582 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nF"
+			(at 199.136 87.122 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 209.2452 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 208.28 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 208.28 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "df55a2d7-6b8f-4fb1-9db5-998eb8f649f9")
+		)
+		(pin "1"
+			(uuid "3ffc8b04-51dd-4636-b135-134088c8cee3")
+		)
+		(instances
+			(project "packmate"
+				(path "/1b0954a2-3127-4772-a3bb-573d547242ae/47a625cc-981e-43f8-ae95-3cb14e85e2ab"
+					(reference "C11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "LED:WS2812B")
 		(at 190.5 88.9 270)
 		(unit 1)
@@ -976,10 +2181,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "5277d10a-6b8a-4077-8866-558a6248125b")
 		(property "Reference" "D8"
-			(at 201.93 82.4798 90)
+			(at 177.8 84.074 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -989,7 +2193,7 @@
 			)
 		)
 		(property "Value" "WS2812B"
-			(at 201.93 85.0198 90)
+			(at 177.8 86.614 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1064,10 +2268,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "52fc9221-6a0b-4471-8dd5-ce437dd490c6")
 		(property "Reference" "D11"
-			(at 201.93 128.1998 90)
+			(at 177.8 129.794 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1077,7 +2280,7 @@
 			)
 		)
 		(property "Value" "WS2812B"
-			(at 201.93 130.7398 90)
+			(at 177.8 132.334 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1152,10 +2355,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "58cdb1f6-aca4-4dc1-9078-06d94fc586e1")
 		(property "Reference" "D6"
-			(at 201.93 51.9998 90)
+			(at 177.8 53.594 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1165,7 +2367,7 @@
 			)
 		)
 		(property "Value" "WS2812B"
-			(at 201.93 54.5398 90)
+			(at 177.8 56.134 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1231,8 +2433,8 @@
 		)
 	)
 	(symbol
-		(lib_id "LED:WS2812B")
-		(at 167.64 104.14 90)
+		(lib_id "Device:C")
+		(at 208.28 101.6 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -1240,10 +2442,171 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
+		(uuid "86e6e91b-e6a8-4a3d-9418-6ad715db7621")
+		(property "Reference" "C12"
+			(at 199.136 99.822 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nF"
+			(at 199.136 102.362 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 209.2452 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 208.28 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 208.28 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "156ad51b-ec72-4341-899e-51892f1410fa")
+		)
+		(pin "1"
+			(uuid "f8d64110-7c4c-4eb8-9663-5760a65a4188")
+		)
+		(instances
+			(project "packmate"
+				(path "/1b0954a2-3127-4772-a3bb-573d547242ae/47a625cc-981e-43f8-ae95-3cb14e85e2ab"
+					(reference "C12")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 208.28 55.88 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "8c99c825-917e-4262-a634-53d9864e345b")
+		(property "Reference" "C9"
+			(at 199.136 54.102 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nF"
+			(at 199.136 56.642 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 209.2452 59.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 208.28 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 208.28 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "ee021315-6f19-4473-ba66-700b5a28d8ed")
+		)
+		(pin "1"
+			(uuid "c510596b-4ace-4c76-9e2a-a1bc9f88ac2e")
+		)
+		(instances
+			(project "packmate"
+				(path "/1b0954a2-3127-4772-a3bb-573d547242ae/47a625cc-981e-43f8-ae95-3cb14e85e2ab"
+					(reference "C9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "LED:WS2812B")
+		(at 151.13 104.14 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
 		(uuid "bc59debb-628e-4682-839f-e0990818fdfd")
 		(property "Reference" "D14"
-			(at 156.21 110.5602 90)
+			(at 164.338 101.6 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1253,7 +2616,7 @@
 			)
 		)
 		(property "Value" "WS2812B"
-			(at 156.21 108.0202 90)
+			(at 164.338 99.06 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1263,7 +2626,7 @@
 			)
 		)
 		(property "Footprint" "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm"
-			(at 175.26 102.87 0)
+			(at 158.75 102.87 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1275,7 +2638,7 @@
 			)
 		)
 		(property "Datasheet" "https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf"
-			(at 177.165 101.6 0)
+			(at 160.655 101.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1287,7 +2650,7 @@
 			)
 		)
 		(property "Description" "RGB LED with integrated controller"
-			(at 167.64 104.14 0)
+			(at 151.13 104.14 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1320,7 +2683,7 @@
 	)
 	(symbol
 		(lib_id "LED:WS2812B")
-		(at 167.64 119.38 90)
+		(at 151.13 119.38 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -1328,10 +2691,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "bd2439ac-f2e3-4da9-a2d6-1df0e777fbc5")
 		(property "Reference" "D13"
-			(at 156.21 125.8002 90)
+			(at 164.338 116.84 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1341,7 +2703,7 @@
 			)
 		)
 		(property "Value" "WS2812B"
-			(at 156.21 123.2602 90)
+			(at 164.338 114.3 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1351,7 +2713,7 @@
 			)
 		)
 		(property "Footprint" "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm"
-			(at 175.26 118.11 0)
+			(at 158.75 118.11 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1363,7 +2725,7 @@
 			)
 		)
 		(property "Datasheet" "https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf"
-			(at 177.165 116.84 0)
+			(at 160.655 116.84 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1375,7 +2737,7 @@
 			)
 		)
 		(property "Description" "RGB LED with integrated controller"
-			(at 167.64 119.38 0)
+			(at 151.13 119.38 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1416,10 +2778,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "d4cdd92f-5b57-436c-b269-6cea6e1d190f")
 		(property "Reference" "D10"
-			(at 201.93 112.9598 90)
+			(at 177.8 114.554 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1429,7 +2790,7 @@
 			)
 		)
 		(property "Value" "WS2812B"
-			(at 201.93 115.4998 90)
+			(at 177.8 117.094 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1495,8 +2856,89 @@
 		)
 	)
 	(symbol
-		(lib_id "LED:WS2812B")
-		(at 167.64 134.62 90)
+		(lib_id "Device:C")
+		(at 208.28 132.08 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "dc239d6e-3bca-4d8c-baa1-92cb761d09a3")
+		(property "Reference" "C14"
+			(at 199.39 130.048 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nF"
+			(at 199.39 132.588 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 209.2452 135.89 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 208.28 132.08 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 208.28 132.08 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "afb1a8e0-21e2-4319-99a5-2812bd8909fd")
+		)
+		(pin "1"
+			(uuid "2f268d12-2ba8-4134-a613-fd9dd58c5300")
+		)
+		(instances
+			(project "packmate"
+				(path "/1b0954a2-3127-4772-a3bb-573d547242ae/47a625cc-981e-43f8-ae95-3cb14e85e2ab"
+					(reference "C14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 132.08 116.84 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -1505,9 +2947,90 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
+		(uuid "eeaadb76-226d-4fff-a545-35aeb424d881")
+		(property "Reference" "C16"
+			(at 135.89 115.5699 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nF"
+			(at 135.89 118.1099 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 133.0452 120.65 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 132.08 116.84 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 132.08 116.84 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "4c802b09-da9c-4050-8a1c-cdb84d849d14")
+		)
+		(pin "1"
+			(uuid "04973cb3-34d2-4ba6-b6d7-bf93b839d89a")
+		)
+		(instances
+			(project "packmate"
+				(path "/1b0954a2-3127-4772-a3bb-573d547242ae/47a625cc-981e-43f8-ae95-3cb14e85e2ab"
+					(reference "C16")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "LED:WS2812B")
+		(at 151.13 134.62 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
 		(uuid "f36c1c89-3865-404e-925b-a4c37e9be033")
 		(property "Reference" "D12"
-			(at 156.21 141.0402 90)
+			(at 164.338 132.08 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1517,7 +3040,7 @@
 			)
 		)
 		(property "Value" "WS2812B"
-			(at 156.21 138.5002 90)
+			(at 164.338 129.54 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1527,7 +3050,7 @@
 			)
 		)
 		(property "Footprint" "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm"
-			(at 175.26 133.35 0)
+			(at 158.75 133.35 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1539,7 +3062,7 @@
 			)
 		)
 		(property "Datasheet" "https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf"
-			(at 177.165 132.08 0)
+			(at 160.655 132.08 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1551,7 +3074,7 @@
 			)
 		)
 		(property "Description" "RGB LED with integrated controller"
-			(at 167.64 134.62 0)
+			(at 151.13 134.62 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
