@@ -7,6 +7,3 @@
 # [submodule "lib/cjson"]
 # 	path = lib/cjson
 # 	url = https://github.com/DaveGamble/cJSON.git
-[submodule "ki-lime-pi-pico"]
-	path = pcb/lib/ki-lime-pi-pico
-	url = https://github.com/recursivenomad/ki-lime-pi-to-go.git
