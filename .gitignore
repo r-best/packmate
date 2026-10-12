@@ -4,3 +4,7 @@ pcb/packmate-backups/
 pcb/**/*.bak
 pcb/**/*.lck
 pcb/**/_autosave*
+pcb/**/*.gbr
+pcb/**/*.gbrjob
+pcb/**/packmate.csv
+pcb/**/*.drl
