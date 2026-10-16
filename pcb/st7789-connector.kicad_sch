@@ -1555,6 +1555,28 @@
 				)
 			)
 		)
+		(property "Sim.Device" ""
+			(at 168.91 115.57 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Type" ""
+			(at 168.91 115.57 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "0157a44a-d50f-4b7e-a84b-fe72b5c1d7c6")
 		)
@@ -1595,7 +1617,7 @@
 				)
 			)
 		)
-		(property "Value" "DISPLAY"
+		(property "Value" "FH12-12S-0.5SH"
 			(at 138.43 78.74 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1627,7 +1649,29 @@
 				)
 			)
 		)
-		(property "Description" "Generic connector, single row, 01x13, script generated (kicad-library-utils/schlib/autogen/connector/)"
+		(property "Description" "ST7789 display FFC, 12-pin, 0.5 mm pitch"
+			(at 138.43 97.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 138.43 97.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Type" ""
 			(at 138.43 97.79 0)
 			(hide yes)
 			(show_name no)
@@ -1988,6 +2032,28 @@
 				)
 			)
 		)
+		(property "Sim.Device" ""
+			(at 166.37 101.6 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Type" ""
+			(at 166.37 101.6 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "38c4623a-4ba8-4af2-bef1-e48b15910175")
 		)
@@ -2297,6 +2363,28 @@
 		)
 		(property "Description" "Resistor"
 			(at 160.02 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 160.02 110.49 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Type" ""
+			(at 160.02 110.49 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)

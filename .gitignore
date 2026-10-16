@@ -1,6 +1,8 @@
 build
 !.vscode/*
 pcb/packmate-backups/
+pcb/.history/
+pcb/**/*.kicad_prl
 pcb/**/*.bak
 pcb/**/*.lck
 pcb/**/_autosave*
