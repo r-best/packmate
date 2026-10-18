@@ -3,4 +3,5 @@
 	(lib (name "TMAG5231C1GQDBZR") (type "KiCad") (uri "${KIPRJMOD}/lib/TMAG5231C1GQDBZR/TMAG5231C1GQDBZR.kicad_sym") (options "") (descr ""))
 	(lib (name "MSD-4-A") (type "KiCad") (uri "${KIPRJMOD}/lib/MicroSDSlot/MSD-4-A.kicad_sym") (options "") (descr ""))
 	(lib (name "PCA9633") (type "KiCad") (uri "${KIPRJMOD}/lib/PCA9633/2026-10-15_20-14-37.kicad_sym") (options "") (descr ""))
+	(lib (name "FFC2B28-12-G") (type "KiCad") (uri "${KIPRJMOD}/lib/FFC2B28-12-G/FFC2B28-12-G.kicad_sym") (options "") (descr ""))
 )

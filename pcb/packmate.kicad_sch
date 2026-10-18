@@ -2608,33 +2608,23 @@
 	)
 	(wire
 		(pts
-			(xy 72.39 173.99) (xy 72.39 107.95)
+			(xy 140.97 157.48) (xy 143.51 157.48)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "149424fd-2a07-4eab-a3d8-d4db380646c0")
+		(uuid "180d56b4-5615-43c7-89c2-8138272bfb96")
 	)
 	(wire
 		(pts
-			(xy 118.11 160.02) (xy 143.51 160.02)
+			(xy 118.11 162.56) (xy 143.51 162.56)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "18ae84e9-66ba-4728-aaa0-2b7c714f9641")
-	)
-	(wire
-		(pts
-			(xy 132.08 82.55) (xy 64.77 82.55)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1f4033d5-db56-47f1-8c51-77f25c13dbd1")
 	)
 	(wire
 		(pts
@@ -2658,26 +2648,6 @@
 	)
 	(wire
 		(pts
-			(xy 67.31 173.99) (xy 67.31 102.87)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "29f4b8bd-1b23-4b47-814b-033bc30a94fe")
-	)
-	(wire
-		(pts
-			(xy 69.85 173.99) (xy 69.85 105.41)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2b2a6d9b-208a-4d3d-9db5-a6e44e171148")
-	)
-	(wire
-		(pts
 			(xy 233.68 77.47) (xy 227.33 77.47)
 		)
 		(stroke
@@ -2698,16 +2668,6 @@
 	)
 	(wire
 		(pts
-			(xy 64.77 173.99) (xy 64.77 100.33)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3771e780-d0bd-47a0-b9ae-d606195fdbf0")
-	)
-	(wire
-		(pts
 			(xy 232.41 87.63) (xy 232.41 92.71)
 		)
 		(stroke
@@ -2718,7 +2678,7 @@
 	)
 	(wire
 		(pts
-			(xy 49.53 90.17) (xy 62.23 90.17)
+			(xy 81.28 80.01) (xy 132.08 80.01)
 		)
 		(stroke
 			(width 0)
@@ -2745,16 +2705,6 @@
 			(type default)
 		)
 		(uuid "499eb989-b175-4c48-9c9e-e09f6520463c")
-	)
-	(wire
-		(pts
-			(xy 64.77 82.55) (xy 64.77 92.71)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4ae2881c-c552-4125-ac15-69d4930b982d")
 	)
 	(wire
 		(pts
@@ -2838,16 +2788,6 @@
 	)
 	(wire
 		(pts
-			(xy 69.85 105.41) (xy 132.08 105.41)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7d14ea9e-c093-4a3e-8472-a98431b1247d")
-	)
-	(wire
-		(pts
 			(xy 124.46 85.09) (xy 123.19 85.09)
 		)
 		(stroke
@@ -2858,7 +2798,7 @@
 	)
 	(wire
 		(pts
-			(xy 64.77 92.71) (xy 49.53 92.71)
+			(xy 81.28 82.55) (xy 132.08 82.55)
 		)
 		(stroke
 			(width 0)
@@ -2878,33 +2818,23 @@
 	)
 	(wire
 		(pts
-			(xy 57.15 113.03) (xy 57.15 173.99)
+			(xy 63.5 105.41) (xy 132.08 105.41)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "8d858566-6caf-4702-9f09-fc4d1fc07aca")
+		(uuid "8e20c9d4-90ad-4352-abbd-2734e7cdd61b")
 	)
 	(wire
 		(pts
-			(xy 64.77 100.33) (xy 132.08 100.33)
+			(xy 63.5 100.33) (xy 132.08 100.33)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "968bd72a-4756-441b-8bb2-67ab7333ee96")
-	)
-	(wire
-		(pts
-			(xy 67.31 102.87) (xy 132.08 102.87)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9c7870d3-fdeb-4b63-a8ba-6f5f55ddc11a")
+		(uuid "9906546a-92fe-47ac-bdbc-ccf3090d1171")
 	)
 	(wire
 		(pts
@@ -2948,23 +2878,13 @@
 	)
 	(wire
 		(pts
-			(xy 74.93 97.79) (xy 132.08 97.79)
+			(xy 140.97 160.02) (xy 143.51 160.02)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "aa39e00f-49f0-4cb0-9f6e-e17ed13582c3")
-	)
-	(wire
-		(pts
-			(xy 62.23 90.17) (xy 62.23 80.01)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "acc9d87e-de9c-497f-b2df-8310d6db8dfa")
+		(uuid "af06d399-64c0-4683-acd1-30675ede1578")
 	)
 	(wire
 		(pts
@@ -2998,16 +2918,6 @@
 	)
 	(wire
 		(pts
-			(xy 72.39 107.95) (xy 132.08 107.95)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b2970abb-f48d-4049-9d6a-e50056e1a5f2")
-	)
-	(wire
-		(pts
 			(xy 129.54 110.49) (xy 132.08 110.49)
 		)
 		(stroke
@@ -3025,6 +2935,16 @@
 			(type default)
 		)
 		(uuid "b38dfdb9-f5a3-410e-acc2-caad5a7e5305")
+	)
+	(wire
+		(pts
+			(xy 63.5 97.79) (xy 132.08 97.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c35730ff-d0b5-42e8-bf4e-d5d9fffa9b59")
 	)
 	(wire
 		(pts
@@ -3048,16 +2968,6 @@
 	)
 	(wire
 		(pts
-			(xy 74.93 173.99) (xy 74.93 97.79)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c83493a3-ae37-42d9-a040-90817ee346d2")
-	)
-	(wire
-		(pts
 			(xy 229.87 90.17) (xy 177.8 90.17)
 		)
 		(stroke
@@ -3065,16 +2975,6 @@
 			(type default)
 		)
 		(uuid "c9e7e88f-6094-4033-b8cf-93b743691d6f")
-	)
-	(wire
-		(pts
-			(xy 62.23 80.01) (xy 132.08 80.01)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "cb7e62eb-ccdd-4d0d-8012-ca9e4a672b87")
 	)
 	(wire
 		(pts
@@ -3098,6 +2998,16 @@
 	)
 	(wire
 		(pts
+			(xy 63.5 107.95) (xy 132.08 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ce92eaa5-3216-4f21-a238-fa70b6b29ca2")
+	)
+	(wire
+		(pts
 			(xy 233.68 82.55) (xy 229.87 82.55)
 		)
 		(stroke
@@ -3118,13 +3028,23 @@
 	)
 	(wire
 		(pts
-			(xy 57.15 113.03) (xy 132.08 113.03)
+			(xy 77.47 113.03) (xy 132.08 113.03)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "e99b6a06-7cf5-4fc7-8882-f86cd3773170")
+	)
+	(wire
+		(pts
+			(xy 63.5 102.87) (xy 132.08 102.87)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e9f4e1e2-3754-409a-ac77-6330073f71c6")
 	)
 	(wire
 		(pts
@@ -3138,13 +3058,23 @@
 	)
 	(wire
 		(pts
-			(xy 118.11 87.63) (xy 118.11 160.02)
+			(xy 118.11 87.63) (xy 118.11 162.56)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "ebf49425-e356-4fdc-a1cb-ad31e900faa6")
+	)
+	(wire
+		(pts
+			(xy 77.47 110.49) (xy 63.5 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ec3ba000-e946-41c2-8d04-aa6158046627")
 	)
 	(wire
 		(pts
@@ -3168,6 +3098,16 @@
 	)
 	(wire
 		(pts
+			(xy 77.47 110.49) (xy 77.47 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f7c16c47-077a-42dd-8c76-f4b2bfade6a6")
+	)
+	(wire
+		(pts
 			(xy 189.23 107.95) (xy 189.23 163.83)
 		)
 		(stroke
@@ -3175,6 +3115,54 @@
 			(type default)
 		)
 		(uuid "f9c97486-71a5-4754-bc39-d598f41d6b0d")
+	)
+	(global_label "SCL0"
+		(shape input)
+		(at 140.97 160.02 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "13b3c786-05c3-4c84-81ca-612129d52cb6")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 133.2677 160.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "SDA0"
+		(shape input)
+		(at 140.97 157.48 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "1482248f-2086-47a1-aa3c-e9c7e4cf58e2")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 133.2072 157.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
 	)
 	(global_label "SCL0"
 		(shape input)
@@ -3311,6 +3299,39 @@
 				)
 			)
 		)
+		(property "MPN" "CRGCQ0603F180R"
+			(at 128.27 85.09 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "TE Connectivity Passive Product"
+			(at 128.27 85.09 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SilkLabel" ""
+			(at 128.27 85.09 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "1116c9c5-cd5b-427a-ae58-4322d4ba2220")
 		)
@@ -3415,7 +3436,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "173b3374-268f-4e5f-bed8-73c37d54fe8a")
 		(property "Reference" "SW3"
@@ -3483,6 +3504,39 @@
 			)
 		)
 		(property "Sim.Type" ""
+			(at 201.93 135.89 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "B3F-1000"
+			(at 201.93 135.89 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Aratas (Formerly Omron Components)"
+			(at 201.93 135.89 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SilkLabel" "LEFT"
 			(at 201.93 135.89 0)
 			(hide yes)
 			(show_name no)
@@ -3618,7 +3672,7 @@
 				)
 			)
 		)
-		(property "Footprint" "LED_SMD:LED_0201_0603Metric"
+		(property "Footprint" "LED_SMD:LED_0402_1005Metric"
 			(at 119.38 85.09 0)
 			(hide yes)
 			(show_name no)
@@ -3674,6 +3728,39 @@
 			)
 		)
 		(property "Sim.Type" ""
+			(at 119.38 85.09 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "APHHS1005SYCK"
+			(at 119.38 85.09 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Kingbright"
+			(at 119.38 85.09 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SilkLabel" "WIRELESS IND."
 			(at 119.38 85.09 0)
 			(hide yes)
 			(show_name no)
@@ -3865,7 +3952,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "531514af-799f-46dc-bcf2-2f5678d198fe")
 		(property "Reference" "SW6"
@@ -3933,6 +4020,39 @@
 			)
 		)
 		(property "Sim.Type" ""
+			(at 100.33 95.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "EG1224"
+			(at 100.33 95.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "E-Switch"
+			(at 100.33 95.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SilkLabel" "WIRELESS SW"
 			(at 100.33 95.25 0)
 			(hide yes)
 			(show_name no)
@@ -4203,7 +4323,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "988c6bf8-4f67-423a-b5f7-3c817f2fd6a8")
 		(property "Reference" "A1"
@@ -4273,6 +4393,39 @@
 			)
 		)
 		(property "Sim.Type" ""
+			(at 154.94 95.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" ""
+			(at 154.94 95.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" ""
+			(at 154.94 95.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SilkLabel" ""
 			(at 154.94 95.25 0)
 			(hide yes)
 			(show_name no)
@@ -4528,7 +4681,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "ac9eef5e-02ab-4fbf-bad2-62526d109da7")
 		(property "Reference" "SW2"
@@ -4606,6 +4759,39 @@
 				)
 			)
 		)
+		(property "MPN" "B3F-1000"
+			(at 101.6 72.39 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Aratas (Formerly Omron Components)"
+			(at 101.6 72.39 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SilkLabel" "RESET"
+			(at 101.6 72.39 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "4788e548-679b-4d26-ae31-af225c113890")
 		)
@@ -4631,7 +4817,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "ad7008bc-a37f-48da-bdba-2818ca914eeb")
 		(property "Reference" "BZ1"
 			(at 139.7 137.9151 0)
@@ -4653,7 +4839,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Buzzer_Beeper:Buzzer_12x9.5RM7.6"
+		(property "Footprint" "Buzzer_Beeper:Buzzer_TDK_PS1240P02BT_D12.2mm_H6.5mm"
 			(at 129.54 136.525 90)
 			(hide yes)
 			(show_name no)
@@ -4698,6 +4884,39 @@
 			)
 		)
 		(property "Sim.Type" ""
+			(at 132.08 137.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "PS1240P02BT"
+			(at 132.08 137.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "TDK"
+			(at 132.08 137.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SilkLabel" "PIEZO"
 			(at 132.08 137.16 0)
 			(hide yes)
 			(show_name no)
@@ -4969,6 +5188,39 @@
 				)
 			)
 		)
+		(property "MPN" "ERJ-3EKF1000V"
+			(at 129.54 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Panasonic Industry"
+			(at 129.54 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SilkLabel" ""
+			(at 129.54 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "2d2055ae-0649-4e1c-99cd-0527fe481f9e")
 		)
@@ -4993,7 +5245,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "c62d372d-2ed1-4ae5-beec-4994c10e1f91")
 		(property "Reference" "SW4"
@@ -5061,6 +5313,39 @@
 			)
 		)
 		(property "Sim.Type" ""
+			(at 101.6 134.62 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "B3F-1000"
+			(at 101.6 134.62 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Aratas (Formerly Omron Components)"
+			(at 101.6 134.62 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SilkLabel" "RIGHT"
 			(at 101.6 134.62 0)
 			(hide yes)
 			(show_name no)
@@ -5299,7 +5584,7 @@
 			)
 		)
 		(pin "BTN" input
-			(at 143.51 160.02 180)
+			(at 143.51 162.56 180)
 			(uuid "0b4a3f77-e88a-45c7-80cc-8e1b463c5ed7")
 			(effects
 				(font
@@ -5348,6 +5633,26 @@
 				(justify right)
 			)
 		)
+		(pin "SCL" input
+			(at 143.51 160.02 180)
+			(uuid "e5643196-ac06-4bf9-a8fc-4f12db85ed4d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "SDA" input
+			(at 143.51 157.48 180)
+			(uuid "4f341467-323f-4ace-84ee-5b6089ce12d0")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
 		(instances
 			(project "packmate"
 				(path "/1b0954a2-3127-4772-a3bb-573d547242ae"
@@ -5357,8 +5662,8 @@
 		)
 	)
 	(sheet
-		(at 34.29 87.63)
-		(size 15.24 8.89)
+		(at 68.58 77.47)
+		(size 12.7 7.62)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -5373,7 +5678,7 @@
 		)
 		(uuid "47a625cc-981e-43f8-ae95-3cb14e85e2ab")
 		(property "Sheetname" "RGB Matrix"
-			(at 34.29 86.9184 0)
+			(at 68.58 76.7584 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5384,7 +5689,7 @@
 			)
 		)
 		(property "Sheetfile" "rgb_matrix.kicad_sch"
-			(at 34.29 97.1046 0)
+			(at 68.58 85.6746 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5395,7 +5700,7 @@
 			)
 		)
 		(pin "Data" input
-			(at 49.53 92.71 0)
+			(at 81.28 82.55 0)
 			(uuid "dcf8a54d-e1ca-417f-bc22-e164c93b509d")
 			(effects
 				(font
@@ -5405,7 +5710,7 @@
 			)
 		)
 		(pin "LEDPower" input
-			(at 49.53 90.17 0)
+			(at 81.28 80.01 0)
 			(uuid "091ecc2c-d7c1-4bd4-8d75-f03d650b0099")
 			(effects
 				(font
@@ -5423,8 +5728,8 @@
 		)
 	)
 	(sheet
-		(at 54.61 173.99)
-		(size 30.48 19.05)
+		(at 50.8 92.71)
+		(size 12.7 22.86)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -5439,7 +5744,7 @@
 		)
 		(uuid "9b607e6a-28a1-4677-b134-b390c7b49176")
 		(property "Sheetname" "Display Connector"
-			(at 53.8984 193.04 90)
+			(at 50.8 91.9984 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5450,7 +5755,7 @@
 			)
 		)
 		(property "Sheetfile" "st7789-connector.kicad_sch"
-			(at 85.6746 193.04 90)
+			(at 50.8 116.1546 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5461,7 +5766,7 @@
 			)
 		)
 		(pin "SDA" input
-			(at 72.39 173.99 90)
+			(at 63.5 107.95 0)
 			(uuid "18994c7f-2fe5-4385-8292-bfb8e405ffb8")
 			(effects
 				(font
@@ -5471,7 +5776,7 @@
 			)
 		)
 		(pin "SCL" input
-			(at 69.85 173.99 90)
+			(at 63.5 105.41 0)
 			(uuid "51ceb79a-1086-454e-af08-ff48030974d8")
 			(effects
 				(font
@@ -5481,7 +5786,7 @@
 			)
 		)
 		(pin "RST" input
-			(at 74.93 173.99 90)
+			(at 63.5 97.79 0)
 			(uuid "456a4aaf-0caa-4fb7-aaad-77e96e3bab04")
 			(effects
 				(font
@@ -5491,7 +5796,7 @@
 			)
 		)
 		(pin "CS" input
-			(at 67.31 173.99 90)
+			(at 63.5 102.87 0)
 			(uuid "08017374-42fd-4abe-bc8d-c3fcee5113a7")
 			(effects
 				(font
@@ -5501,7 +5806,7 @@
 			)
 		)
 		(pin "D{slash}C" input
-			(at 64.77 173.99 90)
+			(at 63.5 100.33 0)
 			(uuid "fa43364f-999f-4608-be96-7222486987d4")
 			(effects
 				(font
@@ -5511,7 +5816,7 @@
 			)
 		)
 		(pin "LEDK" input
-			(at 57.15 173.99 90)
+			(at 63.5 110.49 0)
 			(uuid "5cdf1f81-5305-4f1a-a08f-313246675d08")
 			(effects
 				(font

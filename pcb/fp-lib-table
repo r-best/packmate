@@ -3,4 +3,5 @@
 	(lib (name "TMAG5231C1GQDBZR.pretty") (type "KiCad") (uri "${KIPRJMOD}/lib/TMAG5231C1GQDBZR/footprints.pretty") (options "") (descr ""))
 	(lib (name "MSD-4-A.pretty") (type "KiCad") (uri "${KIPRJMOD}/lib/MicroSDSlot/footprints.pretty") (options "") (descr ""))
 	(lib (name "TL3315NF100Q") (type "KiCad") (uri "${KIPRJMOD}/lib/TL3315NF100Q/footprints.pretty") (options "") (descr ""))
+	(lib (name "FFC2B28-12-G") (type "KiCad") (uri "${KIPRJMOD}/lib/FFC2B28-12-G/footprints.pretty") (options "") (descr ""))
 )

@@ -78,16 +78,12 @@
       ],
       "drc_exclusions": [
         [
-          "courtyards_overlap|100525000|73275000|30b9dfdc-753e-47d9-8eec-0de28e29daba|8997aafc-0ee4-4848-93c8-69b2a9e1afd2",
-          "Intentional, Pico A1 is socketed, plenty of clearance underneath"
+          "courtyards_overlap|102275000|75025000|30b9dfdc-753e-47d9-8eec-0de28e29daba|abaec2b3-0ded-4dd3-8ba5-657058ba53f9",
+          "Intentional, A1 is socketed with plenty of clearance for things beneath"
         ],
         [
-          "courtyards_overlap|106025000|89850000|30b9dfdc-753e-47d9-8eec-0de28e29daba|abaec2b3-0ded-4dd3-8ba5-657058ba53f9",
-          "Intentional, pico is socketed so there's plenty of clearance"
-        ],
-        [
-          "courtyards_overlap|106255000|85887500|2a00efe6-22d1-4c20-95a4-726e6aa294f7|30b9dfdc-753e-47d9-8eec-0de28e29daba",
-          "Intentional, pico is socketed so there's plenty of clearance"
+          "courtyards_overlap|103905000|77137500|2a00efe6-22d1-4c20-95a4-726e6aa294f7|30b9dfdc-753e-47d9-8eec-0de28e29daba",
+          "Intentional, A1 is socketed with plenty of clearance for things beneath"
         ]
       ],
       "meta": {
@@ -536,7 +532,8 @@
       "bobby_icon",
       "TMAG5231C1GQDBZR",
       "MSD-4-A",
-      "PCA9633"
+      "PCA9633",
+      "FFC2B28-12-G"
     ]
   },
   "meta": {
@@ -698,21 +695,99 @@
           "group_by": false,
           "label": "Description",
           "name": "Description",
-          "show": true
+          "show": false
         },
         {
           "group_by": false,
           "label": "#",
           "name": "${ITEM_NUMBER}",
           "show": false
+        },
+        {
+          "group_by": false,
+          "label": "MPN",
+          "name": "MPN",
+          "show": true
+        },
+        {
+          "group_by": false,
+          "label": "Manufacturer",
+          "name": "Manufacturer",
+          "show": true
+        },
+        {
+          "group_by": false,
+          "label": "PARTREV",
+          "name": "PARTREV",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Package",
+          "name": "Package",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "STANDARD",
+          "name": "STANDARD",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "MAXIMUM_PACKAGE_HEIGHT",
+          "name": "MAXIMUM_PACKAGE_HEIGHT",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "DigiKey_Part_Number",
+          "name": "DigiKey_Part_Number",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "MANUFACTURER",
+          "name": "MANUFACTURER",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "SnapEDA_Link",
+          "name": "SnapEDA_Link",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Check_prices",
+          "name": "Check_prices",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "MF",
+          "name": "MF",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "MP",
+          "name": "MP",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "SilkLabel",
+          "name": "SilkLabel",
+          "show": true
         }
       ],
-      "filter_string": "c",
+      "filter_string": "r",
       "group_symbols": true,
       "include_excluded_from_bom": true,
       "name": "",
       "sort_asc": true,
-      "sort_field": "Footprint"
+      "sort_field": "Reference"
     },
     "bus_aliases": {},
     "connection_grid_size": 50.0,
@@ -755,7 +830,7 @@
         "uuid": "1b0954a2-3127-4772-a3bb-573d547242ae"
       }
     ],
-    "used_designators": "",
+    "used_designators": "#PWR32,J1",
     "variants": []
   },
   "sheets": [
