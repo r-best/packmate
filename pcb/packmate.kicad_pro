@@ -603,8 +603,7 @@
       "netlist": "",
       "plot": "",
       "specctra_dsn": "",
-      "step": "",
-      "vrml": ""
+      "step": "packmate.glb"
     },
     "page_layout_descr_file": ""
   },
