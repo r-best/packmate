@@ -4,12 +4,11 @@
 #include "pico/stdlib.h"
 
 #include "drivers/trackball/trackball.hpp"
-#include "libraries/breakout_trackball/breakout_trackball.hpp"
 
 #include "src/hardware/hardware.h"
 
 namespace Trackball {
-    pimoroni::BreakoutTrackball trackball(&i2c);
+    pimoroni::Trackball trackball(&i2c);
     
     static uint8_t SENSITIVITY = 2;
     static int LONG_PRESS_US = 1000000;

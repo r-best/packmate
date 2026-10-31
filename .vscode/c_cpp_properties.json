@@ -16,6 +16,19 @@
             "cStandard": "c17",
             "cppStandard": "c++14",
             "intelliSenseMode": "linux-gcc-arm"
+        },
+        {
+            "name": "Emulator",
+            "includePath": [
+                "${workspaceFolder}/emulator/fakes",
+                "${workspaceFolder}",
+                "${workspaceFolder}/lib/pimoroni-pico",
+                "${workspaceFolder}/emulator/host"
+            ],
+            "compilerPath": "/usr/bin/g++",
+            "cStandard": "gnu17",
+            "cppStandard": "gnu++17",
+            "intelliSenseMode": "linux-gcc-x64"
         }
     ],
     "version": 4

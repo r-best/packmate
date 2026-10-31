@@ -5,6 +5,7 @@
 #include <format>
 #include "pico/stdlib.h"
 
+#ifndef EMULATOR
 // Linker symbols exposed by Pico SDK, used to calculate memory usage
 extern char __bss_start__;
 extern char __bss_end__;
@@ -13,25 +14,34 @@ extern char __data_end__;
 extern char __end__;
 extern char __StackTop;
 extern char __StackBottom;
+#endif
 
 bool MemoryUsageBar::update(InputState *input) {
     return true;
 }
 
 void MemoryUsageBar::render() {
+    struct mallinfo mi = mallinfo();
+    size_t heap_used = mi.uordblks;
+
+#ifndef EMULATOR
     // Memory calculations
     size_t bss_size  = &__bss_end__  - &__bss_start__;
     size_t data_size = &__data_end__ - &__data_start__;
     size_t static_used = bss_size + data_size;
-
-    struct mallinfo mi = mallinfo();
-    size_t heap_used = mi.uordblks;
 
     uint32_t sp;
     asm volatile("mov %0, sp" : "=r"(sp));
     size_t stack_used = &__StackTop - (char*)sp;
 
     size_t total_ram = &__StackTop - &__bss_start__;
+#else
+    // No linker symbols or ARM stack pointer on the PC with emulator
+    // Instead show the heap against the board's 520KB of SRAM
+    size_t static_used = 0;
+    size_t stack_used = 0;
+    size_t total_ram = 520 * 1024;
+#endif
 
     size_t used_total = static_used + heap_used + stack_used;
     size_t free_ram = (used_total < total_ram) ? (total_ram - used_total) : 0;
@@ -71,7 +81,7 @@ void MemoryUsageBar::render() {
     LCD::draw_rect(x, y, 1, h);               // left
     LCD::draw_rect(x + bar_w - 1, y, 1, h);   // right
 
-    float perc = used_total/total_ram;
+    float perc = (float)used_total / total_ram;
     if      (perc > .90)    LCD::set_pen_color(255, 0, 0);
     else if (perc > .80)    LCD::set_pen_color(255, 255, 0);
     else                    LCD::set_pen_color(255, 255, 255);

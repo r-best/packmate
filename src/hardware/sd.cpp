@@ -5,7 +5,6 @@
 #include <math.h>
 #include "pico/stdlib.h"
 #include "ff.h"
-#include "f_util.h"
 
 namespace SD {
     // Direct pointers into the uncached PSRAM alias (0x15000000 = XIP_NOCACHE_NOALLOC + CS1 offset).
